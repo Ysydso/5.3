@@ -1,0 +1,16 @@
+namespace Business_Logic_Test;
+
+public class GymGoerPreviousWorkoutListTests
+{
+    [SetUp]
+    public void Setup()
+    {
+        
+    }
+
+    [Test]
+    public void Test1()
+    {
+        Assert.Pass();
+    }
+}
