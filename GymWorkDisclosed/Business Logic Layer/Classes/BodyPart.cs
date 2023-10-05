@@ -2,11 +2,13 @@
 
 public class BodyPart
 {
-    public Guid Id { get; set; }
-    public string Name { get; set; }
-    public List<MuscleGroup> MuscleGroups { get; set; }
-    public BodyPart()
+    public Guid Id { get; private set; }
+    public string Name { get; private set; }
+    public List<MuscleGroup> MuscleGroups { get; private set; }
+    public BodyPart(Guid id, string name)
     {
+        Id = id;
+        Name = name;
         MuscleGroups = new List<MuscleGroup>();
     }
 }

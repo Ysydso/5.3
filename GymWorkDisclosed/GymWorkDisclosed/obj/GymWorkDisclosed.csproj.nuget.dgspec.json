@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\GymWorkDisclosed\\GymWorkDisclosed\\GymWorkDisclosed.csproj": {}
+    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\GymWorkDisclosed\\GymWorkDisclosed.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\GymWorkDisclosed\\Business Logic Layer\\Business Logic Layer.csproj": {
+    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Layer\\Business Logic Layer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\GymWorkDisclosed\\Business Logic Layer\\Business Logic Layer.csproj",
+        "projectUniqueName": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Layer\\Business Logic Layer.csproj",
         "projectName": "Business Logic Layer",
-        "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\GymWorkDisclosed\\Business Logic Layer\\Business Logic Layer.csproj",
+        "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Layer\\Business Logic Layer.csproj",
         "packagesPath": "C:\\Users\\tienr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\GymWorkDisclosed\\Business Logic Layer\\obj\\",
+        "outputPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Layer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tienr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -59,14 +59,14 @@
         }
       }
     },
-    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\GymWorkDisclosed\\GymWorkDisclosed\\GymWorkDisclosed.csproj": {
+    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\GymWorkDisclosed\\GymWorkDisclosed.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\GymWorkDisclosed\\GymWorkDisclosed\\GymWorkDisclosed.csproj",
+        "projectUniqueName": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\GymWorkDisclosed\\GymWorkDisclosed.csproj",
         "projectName": "GymWorkDisclosed",
-        "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\GymWorkDisclosed\\GymWorkDisclosed\\GymWorkDisclosed.csproj",
+        "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\GymWorkDisclosed\\GymWorkDisclosed.csproj",
         "packagesPath": "C:\\Users\\tienr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\GymWorkDisclosed\\GymWorkDisclosed\\obj\\",
+        "outputPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\GymWorkDisclosed\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tienr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -83,8 +83,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\GymWorkDisclosed\\Business Logic Layer\\Business Logic Layer.csproj": {
-                "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\GymWorkDisclosed\\Business Logic Layer\\Business Logic Layer.csproj"
+              "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Layer\\Business Logic Layer.csproj": {
+                "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Layer\\Business Logic Layer.csproj"
               }
             }
           }

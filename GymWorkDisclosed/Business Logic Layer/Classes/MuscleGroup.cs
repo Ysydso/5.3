@@ -2,12 +2,15 @@
 
 public class MuscleGroup
 {
-    public Guid Id { get; set; }
-    public string Name { get; set; }
-    public List<Exercise> Exercises { get; set; }
-    public BodyPart BodyPart { get; set; }
-    public MuscleGroup()
+    public Guid Id { get; private set; }
+    public string Name { get; private set; }
+    public List<Exercise> Exercises { get; private set; }
+    public BodyPart BodyPart { get; private set; }
+    public MuscleGroup(Guid id, string name, BodyPart bodyPart)
     {
+        Id = id;
+        Name = name;
+        BodyPart = bodyPart;
         Exercises = new List<Exercise>();
     }
 }

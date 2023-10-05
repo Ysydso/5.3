@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sphWahWpTeO0s1sA7bY6FwAcgAR6Yzl7m9BcDtXFnkbRpshqTz2lr1jE6kgJt7y3gRFhJlCAseFb+vdNorwkAA==",
+  "dgSpecHash": "tIr8UOjBCQPDFHs+Ud91v6ugjDtTtEbqljDyrurtJp3H3Z7RnbgTkXESQIct7K1E4OcgTPw0ptssLN8pjxIWJA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\GymWorkDisclosed\\GymWorkDisclosed\\GymWorkDisclosed.csproj",
+  "projectFilePath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\GymWorkDisclosed\\GymWorkDisclosed.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tienr\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
     "C:\\Users\\tienr\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Zblyj7Q9pNGFKqzgygZpkKCI9QkOkvzv04q6uB4nzHPf1RtDDqIFlg/odm471NSyrko7KiaQjgi4HxubFQ6pFg==",
+  "dgSpecHash": "a2f/eQoksIk60EQvSk3eNlYw60SA/MPf/YiEs2tjsWJ2FC4EtWkJqGlkWMnRrTDeli0nyaVw2cPM+XSSJIFlzw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\GymWorkDisclosed\\Business Logic Test\\Business Logic Test.csproj",
+  "projectFilePath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Test\\Business Logic Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tienr\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\tienr\\.nuget\\packages\\microsoft.codecoverage\\17.5.0\\microsoft.codecoverage.17.5.0.nupkg.sha512",

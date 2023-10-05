@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\GymWorkDisclosed\\Business Logic Layer\\Business Logic Layer.csproj",
+      "projectUniqueName": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Layer\\Business Logic Layer.csproj",
       "projectName": "Business Logic Layer",
-      "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\GymWorkDisclosed\\Business Logic Layer\\Business Logic Layer.csproj",
+      "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Layer\\Business Logic Layer.csproj",
       "packagesPath": "C:\\Users\\tienr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\GymWorkDisclosed\\Business Logic Layer\\obj\\",
+      "outputPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Layer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tienr\\AppData\\Roaming\\NuGet\\NuGet.Config",

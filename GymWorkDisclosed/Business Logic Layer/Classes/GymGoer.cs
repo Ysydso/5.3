@@ -2,14 +2,22 @@
 
 public class GymGoer
 {
-    public Guid Id { get; set; }
-    public string Name { get; set; }
-    public string Email { get; set; }
-    public string Password { get; set; }
-    public List<Workout> Workouts { get; set; }
+    public Guid Id { get; }
+    public string Name { get; private set; }
+    public string Email { get; private set; }
+    public string Password { get; private set; }
+    public List<Workout> Workouts { get; private set; }
     
-    public GymGoer()
+    public GymGoer(Guid id, string name, string email, string password)
     {
+        Id = id;
+        Name = name;
+        Email = email;
+        Password = password;
         Workouts = new List<Workout>();
+    }
+    public void AddWorkout(Workout workout)
+    {
+        Workouts.Add(workout);
     }
 }
