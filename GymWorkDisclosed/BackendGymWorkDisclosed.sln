@@ -4,7 +4,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymWorkDisclosed", "GymWork
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business Logic Test", "Business Logic Test\Business Logic Test.csproj", "{9D32CF40-3CEB-4861-BFA8-C4538A962872}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business Logic Layer", "Business Logic Layer\Business Logic Layer.csproj", "{F9D75473-9C82-4F38-9E24-E1FF05F7EBC9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{F9D75473-9C82-4F38-9E24-E1FF05F7EBC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{389F49EC-FC79-4E9D-BED5-5E504BB8EE90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +26,9 @@ Global
 		{F9D75473-9C82-4F38-9E24-E1FF05F7EBC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9D75473-9C82-4F38-9E24-E1FF05F7EBC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9D75473-9C82-4F38-9E24-E1FF05F7EBC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{389F49EC-FC79-4E9D-BED5-5E504BB8EE90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{389F49EC-FC79-4E9D-BED5-5E504BB8EE90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{389F49EC-FC79-4E9D-BED5-5E504BB8EE90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{389F49EC-FC79-4E9D-BED5-5E504BB8EE90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

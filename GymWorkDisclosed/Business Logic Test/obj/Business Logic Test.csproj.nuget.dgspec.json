@@ -4,14 +4,113 @@
     "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Test\\Business Logic Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Layer\\Business Logic Layer.csproj": {
+    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Test\\Business Logic Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Layer\\Business Logic Layer.csproj",
-        "projectName": "Business Logic Layer",
-        "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Layer\\Business Logic Layer.csproj",
+        "projectUniqueName": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Test\\Business Logic Test.csproj",
+        "projectName": "Business Logic Test",
+        "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Test\\Business Logic Test.csproj",
         "packagesPath": "C:\\Users\\tienr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Layer\\obj\\",
+        "outputPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Test\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\tienr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {
+                "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\BusinessLogicLayer\\BusinessLogicLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.5.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.3, )"
+            },
+            "NUnit.Analyzers": {
+              "target": "Package",
+              "version": "[3.6.1, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.4.2, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
+        "projectName": "BusinessLogicLayer",
+        "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
+        "packagesPath": "C:\\Users\\tienr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\BusinessLogicLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tienr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,85 +138,24 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Test\\Business Logic Test.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Test\\Business Logic Test.csproj",
-        "projectName": "Business Logic Test",
-        "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Test\\Business Logic Test.csproj",
-        "packagesPath": "C:\\Users\\tienr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Test\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\tienr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net7.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
-            "projectReferences": {
-              "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Layer\\Business Logic Layer.csproj": {
-                "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Layer\\Business Logic Layer.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
           "dependencies": {
-            "Microsoft.NET.Test.Sdk": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[17.5.0, )"
+              "version": "[7.0.11, )"
             },
-            "NUnit": {
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[3.13.3, )"
+              "version": "[7.0.11, )"
             },
-            "NUnit.Analyzers": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.6.1, )"
+              "version": "[7.0.10, )"
             },
-            "NUnit3TestAdapter": {
+            "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
-              "version": "[4.4.2, )"
-            },
-            "coverlet.collector": {
-              "target": "Package",
-              "version": "[3.2.0, )"
+              "version": "[7.0.0, )"
             }
           },
           "imports": [
