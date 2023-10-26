@@ -1,6 +1,5 @@
-﻿using BusinessLogicLayer.Classes;
-using Microsoft.EntityFrameworkCore;
-using BusinessLogicLayer.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using BusinessLogic.Entities;
 
 namespace DAL;
 

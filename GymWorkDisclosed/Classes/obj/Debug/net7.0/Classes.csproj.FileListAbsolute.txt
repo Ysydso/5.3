@@ -1,0 +1,11 @@
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\Classes\bin\Debug\net7.0\Classes.deps.json
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\Classes\bin\Debug\net7.0\Classes.dll
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\Classes\bin\Debug\net7.0\Classes.pdb
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\Classes\obj\Debug\net7.0\Classes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\Classes\obj\Debug\net7.0\Classes.AssemblyInfoInputs.cache
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\Classes\obj\Debug\net7.0\Classes.AssemblyInfo.cs
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\Classes\obj\Debug\net7.0\Classes.csproj.CoreCompileInputs.cache
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\Classes\obj\Debug\net7.0\Classes.dll
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\Classes\obj\Debug\net7.0\refint\Classes.dll
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\Classes\obj\Debug\net7.0\Classes.pdb
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\Classes\obj\Debug\net7.0\ref\Classes.dll

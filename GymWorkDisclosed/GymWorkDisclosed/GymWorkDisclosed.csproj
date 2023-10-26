@@ -20,8 +20,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj" />
       <ProjectReference Include="..\DAL\DAL.csproj" />
+      <ProjectReference Include="..\GymGoerService\GymGoerService.csproj" />
+      <ProjectReference Include="..\WorkoutService\WorkoutService.csproj" />
     </ItemGroup>
 
 </Project>

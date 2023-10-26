@@ -8,15 +8,16 @@
     ".NETCoreApp,Version=v7.0": {
       "GymWorkDisclosed/1.0.0": {
         "dependencies": {
-          "BusinessLogicLayer": "1.0.0",
           "DAL": "1.0.0",
+          "GymGoerService": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "7.0.5",
           "Microsoft.EntityFrameworkCore": "7.0.11",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.11",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "7.0.10",
           "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore": "7.0.10",
           "Pomelo.EntityFrameworkCore.MySql": "7.0.0",
-          "Swashbuckle.AspNetCore": "6.4.0"
+          "Swashbuckle.AspNetCore": "6.4.0",
+          "WorkoutService": "1.0.0"
         },
         "runtime": {
           "GymWorkDisclosed.dll": {}
@@ -2329,25 +2330,48 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
-      "BusinessLogicLayer/1.0.0": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "7.0.11",
-          "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore": "7.0.10",
-          "Pomelo.EntityFrameworkCore.MySql": "7.0.0"
-        },
+      "Classes/1.0.0": {
         "runtime": {
-          "BusinessLogicLayer.dll": {}
+          "Classes.dll": {}
         }
       },
       "DAL/1.0.0": {
         "dependencies": {
-          "BusinessLogicLayer": "1.0.0",
+          "Entities": "1.0.0",
+          "GymGoerService": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.11",
           "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore": "7.0.10",
-          "Pomelo.EntityFrameworkCore.MySql": "7.0.0"
+          "Pomelo.EntityFrameworkCore.MySql": "7.0.0",
+          "WorkoutService": "1.0.0"
         },
         "runtime": {
           "DAL.dll": {}
+        }
+      },
+      "Entities/1.0.0": {
+        "dependencies": {
+          "Classes": "1.0.0"
+        },
+        "runtime": {
+          "Entities.dll": {}
+        }
+      },
+      "GymGoerService/1.0.0": {
+        "dependencies": {
+          "Classes": "1.0.0",
+          "Entities": "1.0.0"
+        },
+        "runtime": {
+          "GymGoerService.dll": {}
+        }
+      },
+      "WorkoutService/1.0.0": {
+        "dependencies": {
+          "Classes": "1.0.0",
+          "Entities": "1.0.0"
+        },
+        "runtime": {
+          "WorkoutService.dll": {}
         }
       }
     }
@@ -3842,12 +3866,27 @@
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
-    "BusinessLogicLayer/1.0.0": {
+    "Classes/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "DAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GymGoerService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WorkoutService/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,5 +1,5 @@
-using BusinessLogicLayer.Services.GymGoer;
-using BusinessLogicLayer.Services.Workout;
+using BusinessLogic.Services.GymGoer;
+using BusinessLogic.Services.Workout;
 using Microsoft.EntityFrameworkCore;
 using DAL;
 using DAL.Repositories;

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ymUQnIUY1wWrpXYaLanvvOmo1p1CH6jRO7cmXHpI8B0oKsw2bCJH+W0ApmcEEzici4fHGbUdDL+zD0UwUouyNQ==",
+  "dgSpecHash": "Mi9XtcG4WT4jOG4QWMYjCqo5MIKeqiOUcqMihddkBf5H8rRpm9VGeAkyPs3MQrhjR2NZK/x2AgnR/NV56IMh5A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\DAL\\DAL.csproj",
+  "projectFilePath": "C:\\Users\\tienr\\RiderProjects\\GymWorkDisclosed\\GymWorkDisclosed\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tienr\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\tienr\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

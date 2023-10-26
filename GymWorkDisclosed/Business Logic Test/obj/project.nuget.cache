@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JppApK/BZLx4oaoB27rPkc5bwisrMGCvlDqY39DG6m3NdxqCuqMSSyTrF/vD/GvufuQYPQnqYiV3Diikn/rewQ==",
+  "dgSpecHash": "mxWXYHbY09K8XeXiymNLPbUQEOLu3yLW9f9FuT1ChyzxQqEp4VJ4yKrKa1P7MwBgrSOjIoS9p2Lz2abEWMsegw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Test\\Business Logic Test.csproj",
+  "projectFilePath": "C:\\Users\\tienr\\RiderProjects\\GymWorkDisclosed\\GymWorkDisclosed\\Business Logic Test\\Business Logic Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tienr\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\tienr\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",

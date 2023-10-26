@@ -1,5 +1,5 @@
-﻿using BusinessLogicLayer.Services.Workout;
-using BusinessLogicLayer.Entities;
+﻿using BusinessLogic.Services.Workout;
+using BusinessLogic.Entities;
 using Microsoft.EntityFrameworkCore;
 namespace DAL.Repositories;
 

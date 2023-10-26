@@ -1,5 +1,5 @@
-﻿using BusinessLogicLayer.Entities;
-using BusinessLogicLayer.Services.GymGoer;
+﻿using BusinessLogic.Entities;
+using BusinessLogic.Services.GymGoer;
 using Microsoft.EntityFrameworkCore;
 
 
