@@ -20,6 +20,6 @@ public class WorkoutEntity
         {
             sets.Add(setEntity.ToSet());
         }
-        return new Workout(Id, Date, Time, sets, ExerciseEntity.ToExercise(muscleGroupEntity));
+        return new Workout(Id, DateOnly.FromDateTime(Date), Time, sets, ExerciseEntity.ToExercise(muscleGroupEntity));
     }
 }
