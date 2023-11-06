@@ -23,4 +23,9 @@
       <ProjectReference Include="..\WorkoutService\WorkoutService.csproj" />
     </ItemGroup>
 
+
+    <ItemGroup>
+      <Folder Include="Migrations\" />
+    </ItemGroup>
+
 </Project>

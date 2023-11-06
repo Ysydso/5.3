@@ -1,7 +1,7 @@
-﻿using BusinessLogic.Entities;
+﻿using BusinessLogic.Classes;
 namespace BusinessLogic.Services.GymGoer;
 
 public interface IGymGoerRepository
 {
-    public GymGoerEntity? GetGymGoerById(Guid id);
+    public Classes.GymGoer GetGymGoerById(Guid id);
 }

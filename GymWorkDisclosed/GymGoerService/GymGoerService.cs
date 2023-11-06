@@ -12,7 +12,7 @@ public class GymGoerService
     
     public Classes.GymGoer GetGymGoerById(Guid id)
     {
-        return _gymGoerRepository.GetGymGoerById(id).ToGymGoer();
+        return _gymGoerRepository.GetGymGoerById(id);
     }
     
 }

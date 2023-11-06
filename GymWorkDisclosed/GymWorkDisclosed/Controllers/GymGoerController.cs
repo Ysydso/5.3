@@ -23,17 +23,21 @@ namespace GymWorkDisclosed.Controllers
 
         // GET: api/GymGoer/5
         [HttpGet("{id:guid}", Name = "GetGymGoerById")]
-        public string GetGymGoerById(Guid id, [FromServices] IGymGoerRepository _gymGoerRepository) 
+        public IActionResult GetGymGoerById(Guid id, [FromServices] IGymGoerRepository _gymGoerRepository) 
         {
-            GymGoerService gymGoerService = new GymGoerService(_gymGoerRepository);
-            return gymGoerService.GetGymGoerById(id).Name;
+            try
+            {
+                GymGoerService gymGoerService = new GymGoerService(_gymGoerRepository);
+                GymGoer gymGoer = gymGoerService.GetGymGoerById(id);
+                return Ok(gymGoer);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+          
         }
-        // [HttpGet("{id:guid}", Name = "GetWorkoutsByGymGoerId")]
-        // public List<Workout> WorkoutsByGymGoerId(Guid id, [FromServices] IGymGoerRepository _gymGoerRepository) 
-        // {
-        //     GymGoerService gymGoerService = new GymGoerService(_gymGoerRepository);
-        //     return gymGoerService.GetGymGoerById(id).Workouts;
-        // }
 
         // POST: api/GymGoer
         [HttpPost]

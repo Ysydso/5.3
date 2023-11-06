@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using BusinessLogic.Entities;
+using DAL.Entities;
 
 namespace DAL;
 

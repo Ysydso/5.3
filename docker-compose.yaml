@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  web-app:
+    image: gymworkdisclosed-web-app
+    build: GymWorkDisclosedFront\gymworkdisclosedfront
+    ports: 
+      - "3000:3000"
+  db:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: GymWorkDisclosed
+      MYSQL_USER: my_user
+      MYSQL_PASSWORD: cTe8j!9btLM5Vb
+    ports:
+      - "3306:3306"
+  api:
+    build: GymWorkDisclosed
+    container_name: GymWorkDisclosedAPI
+    environment:
+      - ASPNETCORE_URLS=http://+:8080
+    ports:
+      - "5052:8080"

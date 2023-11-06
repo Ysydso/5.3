@@ -1,8 +1,8 @@
-﻿using BusinessLogic.Entities;
+﻿using BusinessLogic.Classes;
 
 namespace BusinessLogic.Services.Workout;
 
 public interface IWorkoutRepository
 {
-    public List<WorkoutEntity> GetWorkoutsByGymGoerId(Guid id);
+    public List<Classes.Workout> GetWorkoutsByGymGoerId(Guid id);
 }

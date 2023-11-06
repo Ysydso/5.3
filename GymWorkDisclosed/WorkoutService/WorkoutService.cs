@@ -1,5 +1,4 @@
-﻿using BusinessLogic.Entities;
-using BusinessLogic.Classes;
+﻿using BusinessLogic.Classes;
 
 namespace BusinessLogic.Services.Workout;
 
@@ -13,12 +12,7 @@ public class WorkoutService
     
     public List<Classes.Workout> GetWorkoutsByGymGoerId(Guid id)
     {
-        List<WorkoutEntity> workoutEntities = _workoutRepository.GetWorkoutsByGymGoerId(id);
-        List<Classes.Workout> workouts = new List<Classes.Workout>();
-        foreach (WorkoutEntity workout in workoutEntities)
-        {
-            workouts.Add(workout.ToWorkout(workout.ExerciseEntity.MuscleGroupExerciseEntities.Select(mge => mge.MuscleGroupEntity).ToList()));
-        }
+        List<Classes.Workout> workouts = _workoutRepository.GetWorkoutsByGymGoerId(id);
 
         return workouts;
     }

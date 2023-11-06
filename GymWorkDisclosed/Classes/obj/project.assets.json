@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tienr\\RiderProjects\\GymWorkDisclosed\\GymWorkDisclosed\\Classes\\Classes.csproj",
+      "projectUniqueName": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Classes\\Classes.csproj",
       "projectName": "Classes",
-      "projectPath": "C:\\Users\\tienr\\RiderProjects\\GymWorkDisclosed\\GymWorkDisclosed\\Classes\\Classes.csproj",
+      "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Classes\\Classes.csproj",
       "packagesPath": "C:\\Users\\tienr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tienr\\RiderProjects\\GymWorkDisclosed\\GymWorkDisclosed\\Classes\\obj\\",
+      "outputPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Classes\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tienr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
