@@ -1,5 +1,5 @@
 import React from 'react'
-import Details from './WorkoutList'
+import GymGoer from './WorkoutList'
 
 export default function Workouts() {
   return (
@@ -10,8 +10,7 @@ export default function Workouts() {
           <p><small>Workouts from user</small></p>
         </div>
       </nav>
-
-      <details/>
+        <GymGoer />
     </main>
   )
-}
+} 
