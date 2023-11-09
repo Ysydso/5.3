@@ -1,9 +1,4 @@
-async function getGymGoer(id) {
-    const res = await fetch(`http://localhost:5206/api/GymGoer/${id}`)
-    const data = await res.json()
-    return data
-}
-
+import { getGymGoer } from '../../components/services/gymGoerService'
 export default async function GymGoer(){
     const gymgoer = await getGymGoer("82e1b165-7baf-49c2-868f-7e45b2750d19")
     return(
@@ -24,7 +19,7 @@ export default async function GymGoer(){
                                         <h4>Reps: {set.reps}</h4>
                                         <h4>Weight: {set.weight}</h4>
                                         <h4>Time: {set.time} seconds</h4>
-                                    </details>
+                                    < /details>
                                     </p>
                                 ))}
                             </details>
