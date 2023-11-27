@@ -10,7 +10,7 @@ export default function Workouts() {
           <p><small>Workouts from user</small></p>
         </div>
       </nav>
-        <GymGoer />
+        <GymGoer filtertype={"musclegroup"} filtervalue={"Chest"}/>
     </main>
   )
 } 

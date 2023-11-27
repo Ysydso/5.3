@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using BusinessLogic.Services.ExerciseService;
 
 namespace GymWorkDisclosed.Controllers
 {
@@ -11,11 +12,17 @@ namespace GymWorkDisclosed.Controllers
     [ApiController]
     public class ExerciseController : ControllerBase
     {
+        
+        private readonly ExerciseService _exerciseService;
+        public ExerciseController(ExerciseService exerciseService)
+        {
+            _exerciseService = exerciseService;
+        }
         // GET: api/Exercise
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            
         }
 
         // GET: api/Exercise/5

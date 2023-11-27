@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using BusinessLogic.Classes;
 using BusinessLogic.Services.GymGoer;
 using DAL.Repositories;
+using GymWorkDisclosed.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,6 +15,12 @@ namespace GymWorkDisclosed.Controllers
     [ApiController]
     public class GymGoerController : ControllerBase
     {
+        private readonly GymGoerService _gymGoerService;
+        
+        public GymGoerController(GymGoerService gymGoerService)
+        {
+            _gymGoerService = gymGoerService;
+        }
         // GET: api/GymGoer
         [HttpGet]
         public IEnumerable<string> Get()
@@ -22,14 +29,60 @@ namespace GymWorkDisclosed.Controllers
         }
 
         // GET: api/GymGoer/5
-        [HttpGet("{id:guid}", Name = "GetGymGoerById")]
-        public IActionResult GetGymGoerById(Guid id, [FromServices] IGymGoerRepository _gymGoerRepository) 
+        [HttpGet("{id:guid}", Name = "GetWorkoutListByGymGoerId")]
+        public IActionResult GetGymGoerById(Guid id, string filterproperty, string filtervalue) 
         {
             try
             {
-                GymGoerService gymGoerService = new GymGoerService(_gymGoerRepository);
-                GymGoer gymGoer = gymGoerService.GetGymGoerById(id);
-                return Ok(gymGoer);
+                GymGoer gymGoer = _gymGoerService.GetGymGoerById(id);
+                GymGoerWorkoutsDTO gymGoerWorkoutsDTO = new GymGoerWorkoutsDTO(gymGoer.Id, gymGoer.Name, gymGoer.Email);
+                switch (filterproperty)
+                {
+                    case "all": 
+                        foreach (Workout workout in gymGoer.Workouts)
+                        {
+                            WorkoutDTO workoutDTO = new WorkoutDTO(workout);
+                            gymGoerWorkoutsDTO.Workouts.Add(workoutDTO);
+                        }
+                        break;
+                    case "exercise":
+                        foreach (Workout workout in gymGoer.Workouts)
+                        {
+                            if (workout.Exercise.Name == filtervalue)
+                            {
+                                WorkoutDTO workoutDTO = new WorkoutDTO(workout);
+                                gymGoerWorkoutsDTO.Workouts.Add(workoutDTO);
+                            }
+                        }
+                        break;
+                    case "musclegroup":
+                        foreach (Workout workout in gymGoer.Workouts)
+                        {
+                            foreach (MuscleGroup muscleGroup in workout.Exercise.MuscleGroups)
+                            {
+                                if (muscleGroup.Name == filtervalue)
+                                {
+                                    WorkoutDTO workoutDTO = new WorkoutDTO(workout);
+                                    gymGoerWorkoutsDTO.Workouts.Add(workoutDTO);
+                                }
+                            }
+                        }
+                        break;
+                    case "bodypart":
+                        foreach (Workout workout in gymGoer.Workouts)
+                        {
+                            foreach (MuscleGroup muscleGroup in workout.Exercise.MuscleGroups)
+                            {
+                                if (muscleGroup.BodyPart.Name == filtervalue)
+                                {
+                                    WorkoutDTO workoutDTO = new WorkoutDTO(workout);
+                                    gymGoerWorkoutsDTO.Workouts.Add(workoutDTO);
+                                }
+                            }
+                        }
+                        break;
+                }
+                return Ok(gymGoerWorkoutsDTO);
             }
             catch (Exception e)
             {

@@ -16,6 +16,12 @@ namespace GymWorkDisclosed.Controllers
     [ApiController]
     public class WorkoutController : ControllerBase
     {
+        private readonly WorkoutService _workoutService;
+        
+        public WorkoutController(WorkoutService workoutService)
+        {
+            _workoutService = workoutService;
+        }
         // GET: api/Exercise
         [HttpGet]
         public IEnumerable<string> Get()
@@ -25,10 +31,9 @@ namespace GymWorkDisclosed.Controllers
 
         // GET: api/Workout/5
         [HttpGet("{id:guid}", Name = "GetWorkoutsByGymGoerId")]
-        public List<Workout> WorkoutsByGymGoerId(Guid id, [FromServices] IWorkoutRepository _workoutRepository) 
+        public List<Workout> WorkoutsByGymGoerId(Guid id) 
         {
-            WorkoutService workoutService = new WorkoutService(_workoutRepository);
-            return workoutService.GetWorkoutsByGymGoerId(id);
+            return _workoutService.GetWorkoutsByGymGoerId(id);
         }
 
         // POST: api/Exercise

@@ -141,3 +141,9 @@ form button {
     absolute bottom-0 right-0 
     rounded-tl-md;
 }
+.checkbox {
+  @apply 
+    inline-block 
+    align-middle 
+    text-primary;
+}

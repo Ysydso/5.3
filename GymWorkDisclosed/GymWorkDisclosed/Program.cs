@@ -8,10 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 //Add Dependency Injection
 
-builder.Services.AddScoped<IGymGoerRepository, GymGoerRepository>();
-builder.Services.AddScoped<IWorkoutRepository, WorkoutRepository>();
-
-
+builder.Services.AddTransient<IGymGoerRepository, GymGoerRepository>();
+builder.Services.AddTransient<IWorkoutRepository, WorkoutRepository>();
+builder.Services.AddScoped<GymGoerService>();
+builder.Services.AddScoped<WorkoutService>();
 //Add DBContext
 
 IConfigurationRoot config = new ConfigurationBuilder()
