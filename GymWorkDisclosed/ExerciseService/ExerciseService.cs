@@ -17,4 +17,5 @@ public class ExerciseService
     {
         return _exerciseRepository.GetExercisesByGymGoer(GymgoerId);
     }
+    
 }
