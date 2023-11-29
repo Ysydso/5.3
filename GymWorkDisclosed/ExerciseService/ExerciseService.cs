@@ -13,4 +13,8 @@ public class ExerciseService
     {
         return _exerciseRepository.GetAllExercises();
     }
+    public List<Exercise> GetExercisesByGymGoer(Guid GymgoerId)
+    {
+        return _exerciseRepository.GetExercisesByGymGoer(GymgoerId);
+    }
 }
