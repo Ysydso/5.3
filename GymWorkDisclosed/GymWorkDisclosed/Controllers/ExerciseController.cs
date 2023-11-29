@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BusinessLogic.Classes;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using BusinessLogic.Services.ExerciseService;
+using GymWorkDisclosed.DTOs;
 
 namespace GymWorkDisclosed.Controllers
 {
@@ -22,7 +24,37 @@ namespace GymWorkDisclosed.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            
+            List<Exercise> exercises = _exerciseService.GetAllExercises();
+            List<ExerciseDTO> exerciseDTOs = new List<ExerciseDTO>();
+            foreach (Exercise exercise in exercises)
+            {
+                ExerciseDTO exerciseDto = new ExerciseDTO(exercise.Id, exercise.Name);
+                foreach (MuscleGroup muscleGroup in exercise.MuscleGroups)
+                {
+                    MuscleGroupDTO muscleGroupDto = new MuscleGroupDTO(muscleGroup.Id, muscleGroup.Name, muscleGroup.BodyPart.Name);
+                    exerciseDto.MuscleGroups.Add(muscleGroupDto);
+                }
+                exerciseDTOs.Add(exerciseDto);
+            }
+            return Ok(exerciseDTOs);
+        }
+        [HttpGet]
+        [Route("GetExercisesByGymGoer/{GymgoerId:guid}")]
+        public IActionResult GetExercisesByGymGoer(Guid GymgoerId)
+        {
+            List<Exercise> exercises = _exerciseService.GetExercisesByGymGoer(GymgoerId);
+            List<ExerciseDTO> exerciseDTOs = new List<ExerciseDTO>();
+            foreach (Exercise exercise in exercises)
+            {
+                ExerciseDTO exerciseDto = new ExerciseDTO(exercise.Id, exercise.Name);
+                foreach (MuscleGroup muscleGroup in exercise.MuscleGroups)
+                {
+                    MuscleGroupDTO muscleGroupDto = new MuscleGroupDTO(muscleGroup.Id, muscleGroup.Name, muscleGroup.BodyPart.Name);
+                    exerciseDto.MuscleGroups.Add(muscleGroupDto);
+                }
+                exerciseDTOs.Add(exerciseDto);
+            }
+            return Ok(exerciseDTOs);
         }
 
         // GET: api/Exercise/5
