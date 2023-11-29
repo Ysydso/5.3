@@ -1,3 +1,4 @@
+using BusinessLogic.Services.ExerciseService;
 using BusinessLogic.Services.GymGoer;
 using BusinessLogic.Services.Workout;
 using Microsoft.EntityFrameworkCore;
@@ -10,8 +11,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddTransient<IGymGoerRepository, GymGoerRepository>();
 builder.Services.AddTransient<IWorkoutRepository, WorkoutRepository>();
+builder.Services.AddTransient<IExerciseRepository, ExerciseRepository>();
 builder.Services.AddScoped<GymGoerService>();
 builder.Services.AddScoped<WorkoutService>();
+builder.Services.AddScoped<ExerciseService>();
 //Add DBContext
 
 IConfigurationRoot config = new ConfigurationBuilder()
