@@ -1,5 +1,6 @@
-using BusinessLogicLayer.Services.GymGoer;
-using BusinessLogicLayer.Services.Workout;
+using BusinessLogic.Services.ExerciseService;
+using BusinessLogic.Services.GymGoer;
+using BusinessLogic.Services.Workout;
 using Microsoft.EntityFrameworkCore;
 using DAL;
 using DAL.Repositories;
@@ -8,10 +9,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 //Add Dependency Injection
 
-builder.Services.AddScoped<IGymGoerRepository, GymGoerRepository>();
-builder.Services.AddScoped<IWorkoutRepository, WorkoutRepository>();
-
-
+builder.Services.AddTransient<IGymGoerRepository, GymGoerRepository>();
+builder.Services.AddTransient<IWorkoutRepository, WorkoutRepository>();
+builder.Services.AddTransient<IExerciseRepository, ExerciseRepository>();
+builder.Services.AddScoped<GymGoerService>();
+builder.Services.AddScoped<WorkoutService>();
+builder.Services.AddScoped<ExerciseService>();
 //Add DBContext
 
 IConfigurationRoot config = new ConfigurationBuilder()
@@ -35,6 +38,11 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+app.UseCors(corsPolicyBuilder =>
+    corsPolicyBuilder
+        .WithOrigins("http://localhost:3000")
+        .AllowAnyMethod()
+        .AllowAnyHeader());
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

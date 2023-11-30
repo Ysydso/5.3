@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Test\\Business Logic Test.csproj": {}
+    "C:\\Users\\tienr\\RiderProjects\\S3 IP\\GymWorkDisclosed\\Business Logic Test\\Business Logic Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Test\\Business Logic Test.csproj": {
+    "C:\\Users\\tienr\\RiderProjects\\S3 IP\\GymWorkDisclosed\\Business Logic Test\\Business Logic Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Test\\Business Logic Test.csproj",
+        "projectUniqueName": "C:\\Users\\tienr\\RiderProjects\\S3 IP\\GymWorkDisclosed\\Business Logic Test\\Business Logic Test.csproj",
         "projectName": "Business Logic Test",
-        "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Test\\Business Logic Test.csproj",
+        "projectPath": "C:\\Users\\tienr\\RiderProjects\\S3 IP\\GymWorkDisclosed\\Business Logic Test\\Business Logic Test.csproj",
         "packagesPath": "C:\\Users\\tienr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\Business Logic Test\\obj\\",
+        "outputPath": "C:\\Users\\tienr\\RiderProjects\\S3 IP\\GymWorkDisclosed\\Business Logic Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tienr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {
-                "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\BusinessLogicLayer\\BusinessLogicLayer.csproj"
+              "C:\\Users\\tienr\\RiderProjects\\S3 IP\\GymWorkDisclosed\\Classes\\Classes.csproj": {
+                "projectPath": "C:\\Users\\tienr\\RiderProjects\\S3 IP\\GymWorkDisclosed\\Classes\\Classes.csproj"
               }
             }
           }
@@ -99,18 +99,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {
+    "C:\\Users\\tienr\\RiderProjects\\S3 IP\\GymWorkDisclosed\\Classes\\Classes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
-        "projectName": "BusinessLogicLayer",
-        "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
+        "projectUniqueName": "C:\\Users\\tienr\\RiderProjects\\S3 IP\\GymWorkDisclosed\\Classes\\Classes.csproj",
+        "projectName": "Classes",
+        "projectPath": "C:\\Users\\tienr\\RiderProjects\\S3 IP\\GymWorkDisclosed\\Classes\\Classes.csproj",
         "packagesPath": "C:\\Users\\tienr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\BusinessLogicLayer\\obj\\",
+        "outputPath": "C:\\Users\\tienr\\RiderProjects\\S3 IP\\GymWorkDisclosed\\Classes\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tienr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -138,26 +138,6 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[7.0.11, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[7.0.11, )"
-            },
-            "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[7.0.10, )"
-            },
-            "Pomelo.EntityFrameworkCore.MySql": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -174,7 +154,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

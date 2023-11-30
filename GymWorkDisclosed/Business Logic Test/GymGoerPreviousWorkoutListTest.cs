@@ -12,8 +12,8 @@ public class GymGoerPreviousWorkoutListTest
             BodyPart bodyPart = new BodyPart(new Guid(), "Arm");
             MuscleGroup muscleGroup = new MuscleGroup(new Guid(), "Biceps", bodyPart);
             exercise.AddMuscleGroup(muscleGroup);
-            Workout workout = new Workout(new Guid(), new DateTime(2023, 8, 29), 60, gymGoer, exercise);
-            Workout workout2 = new Workout(new Guid(), new DateTime(2023, 9, 29), 60, gymGoer, exercise);
+            Workout workout = new Workout(new Guid(), new DateOnly(2023, 8, 29), 60, gymGoer, exercise);
+            Workout workout2 = new Workout(new Guid(), new DateOnly(2023, 9, 29), 60, gymGoer, exercise);
             gymGoer.AddWorkout(workout);
             gymGoer.AddWorkout(workout2);
         }

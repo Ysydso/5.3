@@ -1,0 +1,34 @@
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\WorkoutService\bin\Debug\net7.0\WorkoutService.deps.json
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\WorkoutService\bin\Debug\net7.0\WorkoutService.dll
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\WorkoutService\bin\Debug\net7.0\WorkoutService.pdb
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\WorkoutService\bin\Debug\net7.0\Classes.dll
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\WorkoutService\bin\Debug\net7.0\Entities.dll
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\WorkoutService\bin\Debug\net7.0\Classes.pdb
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\WorkoutService\bin\Debug\net7.0\Entities.pdb
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\WorkoutService\obj\Debug\net7.0\WorkoutService.csproj.AssemblyReference.cache
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\WorkoutService\obj\Debug\net7.0\WorkoutService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\WorkoutService\obj\Debug\net7.0\WorkoutService.AssemblyInfoInputs.cache
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\WorkoutService\obj\Debug\net7.0\WorkoutService.AssemblyInfo.cs
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\WorkoutService\obj\Debug\net7.0\WorkoutService.csproj.CoreCompileInputs.cache
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\WorkoutService\obj\Debug\net7.0\WorkoutService.csproj.CopyComplete
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\WorkoutService\obj\Debug\net7.0\WorkoutService.dll
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\WorkoutService\obj\Debug\net7.0\refint\WorkoutService.dll
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\WorkoutService\obj\Debug\net7.0\WorkoutService.pdb
+C:\Users\tienr\RiderProjects\GymWorkDisclosed\GymWorkDisclosed\WorkoutService\obj\Debug\net7.0\ref\WorkoutService.dll
+C:\Users\tienr\OneDrive - Office 365 Fontys\Documents\RiderGit\S3 IP\GymWorkDisclosed\WorkoutService\bin\Debug\net7.0\WorkoutService.deps.json
+C:\Users\tienr\OneDrive - Office 365 Fontys\Documents\RiderGit\S3 IP\GymWorkDisclosed\WorkoutService\bin\Debug\net7.0\WorkoutService.dll
+C:\Users\tienr\OneDrive - Office 365 Fontys\Documents\RiderGit\S3 IP\GymWorkDisclosed\WorkoutService\bin\Debug\net7.0\WorkoutService.pdb
+C:\Users\tienr\OneDrive - Office 365 Fontys\Documents\RiderGit\S3 IP\GymWorkDisclosed\WorkoutService\bin\Debug\net7.0\Classes.dll
+C:\Users\tienr\OneDrive - Office 365 Fontys\Documents\RiderGit\S3 IP\GymWorkDisclosed\WorkoutService\bin\Debug\net7.0\Entities.dll
+C:\Users\tienr\OneDrive - Office 365 Fontys\Documents\RiderGit\S3 IP\GymWorkDisclosed\WorkoutService\bin\Debug\net7.0\Classes.pdb
+C:\Users\tienr\OneDrive - Office 365 Fontys\Documents\RiderGit\S3 IP\GymWorkDisclosed\WorkoutService\bin\Debug\net7.0\Entities.pdb
+C:\Users\tienr\OneDrive - Office 365 Fontys\Documents\RiderGit\S3 IP\GymWorkDisclosed\WorkoutService\obj\Debug\net7.0\WorkoutService.csproj.AssemblyReference.cache
+C:\Users\tienr\OneDrive - Office 365 Fontys\Documents\RiderGit\S3 IP\GymWorkDisclosed\WorkoutService\obj\Debug\net7.0\WorkoutService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tienr\OneDrive - Office 365 Fontys\Documents\RiderGit\S3 IP\GymWorkDisclosed\WorkoutService\obj\Debug\net7.0\WorkoutService.AssemblyInfoInputs.cache
+C:\Users\tienr\OneDrive - Office 365 Fontys\Documents\RiderGit\S3 IP\GymWorkDisclosed\WorkoutService\obj\Debug\net7.0\WorkoutService.AssemblyInfo.cs
+C:\Users\tienr\OneDrive - Office 365 Fontys\Documents\RiderGit\S3 IP\GymWorkDisclosed\WorkoutService\obj\Debug\net7.0\WorkoutService.csproj.CoreCompileInputs.cache
+C:\Users\tienr\OneDrive - Office 365 Fontys\Documents\RiderGit\S3 IP\GymWorkDisclosed\WorkoutService\obj\Debug\net7.0\WorkoutService.csproj.CopyComplete
+C:\Users\tienr\OneDrive - Office 365 Fontys\Documents\RiderGit\S3 IP\GymWorkDisclosed\WorkoutService\obj\Debug\net7.0\WorkoutService.dll
+C:\Users\tienr\OneDrive - Office 365 Fontys\Documents\RiderGit\S3 IP\GymWorkDisclosed\WorkoutService\obj\Debug\net7.0\refint\WorkoutService.dll
+C:\Users\tienr\OneDrive - Office 365 Fontys\Documents\RiderGit\S3 IP\GymWorkDisclosed\WorkoutService\obj\Debug\net7.0\WorkoutService.pdb
+C:\Users\tienr\OneDrive - Office 365 Fontys\Documents\RiderGit\S3 IP\GymWorkDisclosed\WorkoutService\obj\Debug\net7.0\ref\WorkoutService.dll

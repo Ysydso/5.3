@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\GymWorkDisclosed\\GymWorkDisclosed.csproj": {}
+    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\GymWorkDisclosed\\GymWorkDisclosed.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {
+    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Classes\\Classes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
-        "projectName": "BusinessLogicLayer",
-        "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
+        "projectUniqueName": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Classes\\Classes.csproj",
+        "projectName": "Classes",
+        "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Classes\\Classes.csproj",
         "packagesPath": "C:\\Users\\tienr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\BusinessLogicLayer\\obj\\",
+        "outputPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Classes\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tienr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,26 +39,6 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[7.0.11, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[7.0.11, )"
-            },
-            "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[7.0.10, )"
-            },
-            "Pomelo.EntityFrameworkCore.MySql": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -79,14 +59,14 @@
         }
       }
     },
-    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\DAL\\DAL.csproj": {
+    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\DAL\\DAL.csproj",
+        "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\tienr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\DAL\\obj\\",
+        "outputPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tienr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -103,8 +83,14 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {
-                "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\BusinessLogicLayer\\BusinessLogicLayer.csproj"
+              "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Entities\\Entities.csproj"
+              },
+              "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\GymGoerService\\GymGoerService.csproj": {
+                "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\GymGoerService\\GymGoerService.csproj"
+              },
+              "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\WorkoutService\\WorkoutService.csproj": {
+                "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\WorkoutService\\WorkoutService.csproj"
               }
             }
           }
@@ -158,14 +144,14 @@
         }
       }
     },
-    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\GymWorkDisclosed\\GymWorkDisclosed.csproj": {
+    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\GymWorkDisclosed\\GymWorkDisclosed.csproj",
-        "projectName": "GymWorkDisclosed",
-        "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\GymWorkDisclosed\\GymWorkDisclosed.csproj",
+        "projectUniqueName": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Entities\\Entities.csproj",
+        "projectName": "Entities",
+        "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\tienr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\GymWorkDisclosed\\obj\\",
+        "outputPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tienr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -182,11 +168,135 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {
-                "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\BusinessLogicLayer\\BusinessLogicLayer.csproj"
+              "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Classes\\Classes.csproj": {
+                "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Classes\\Classes.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\GymGoerService\\GymGoerService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\GymGoerService\\GymGoerService.csproj",
+        "projectName": "GymGoerService",
+        "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\GymGoerService\\GymGoerService.csproj",
+        "packagesPath": "C:\\Users\\tienr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\GymGoerService\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\tienr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Classes\\Classes.csproj": {
+                "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Classes\\Classes.csproj"
               },
-              "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\GymDisclosed\\GymWorkDisclosed\\DAL\\DAL.csproj"
+              "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Entities\\Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\GymWorkDisclosed\\GymWorkDisclosed.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\GymWorkDisclosed\\GymWorkDisclosed.csproj",
+        "projectName": "GymWorkDisclosed",
+        "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\GymWorkDisclosed\\GymWorkDisclosed.csproj",
+        "packagesPath": "C:\\Users\\tienr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\GymWorkDisclosed\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\tienr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\DAL\\DAL.csproj"
+              },
+              "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\GymGoerService\\GymGoerService.csproj": {
+                "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\GymGoerService\\GymGoerService.csproj"
+              },
+              "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\WorkoutService\\WorkoutService.csproj": {
+                "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\WorkoutService\\WorkoutService.csproj"
               }
             }
           }
@@ -247,6 +357,68 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\WorkoutService\\WorkoutService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\WorkoutService\\WorkoutService.csproj",
+        "projectName": "WorkoutService",
+        "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\WorkoutService\\WorkoutService.csproj",
+        "packagesPath": "C:\\Users\\tienr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\WorkoutService\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\tienr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Classes\\Classes.csproj": {
+                "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Classes\\Classes.csproj"
+              },
+              "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\tienr\\OneDrive - Office 365 Fontys\\Documents\\RiderGit\\S3 IP\\GymWorkDisclosed\\Entities\\Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

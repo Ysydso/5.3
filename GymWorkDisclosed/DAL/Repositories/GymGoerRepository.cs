@@ -1,5 +1,7 @@
-﻿using BusinessLogicLayer.Entities;
-using BusinessLogicLayer.Services.GymGoer;
+﻿using BusinessLogic.Classes;
+using DAL.Entities;
+using BusinessLogic.Services.GymGoer;
+using DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -14,11 +16,18 @@ public class GymGoerRepository : IGymGoerRepository
         _context = context;
     }
 
-    public GymGoerEntity? GetGymGoerById(Guid id)
+    public GymGoer GetGymGoerById(Guid id)
     {
-        return _context.gymGoer
-            .Include(g => g.Workouts)
-            .ThenInclude(w => w.Sets)
+        GymGoerEntity gymGoerEntity 
+            = _context.gymGoer
+                .Include(g => g.Workouts)
+                .ThenInclude(w => w.Sets)
+                .Include(g => g.Workouts)
+                .ThenInclude(w => w.ExerciseEntity)
+                .ThenInclude(e => e.MuscleGroupExerciseEntities)
+                .ThenInclude(mge => mge.MuscleGroupEntity)
+                .ThenInclude(mg => mg.BodyPartEntity)
             .FirstOrDefault(g => g.Id == id);
+        return gymGoerEntity.ToGymGoer();
     }
 }
