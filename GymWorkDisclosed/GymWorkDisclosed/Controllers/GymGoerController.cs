@@ -30,57 +30,27 @@ namespace GymWorkDisclosed.Controllers
 
         // GET: api/GymGoer/5
         [HttpGet("{id:guid}", Name = "GetWorkoutListByGymGoerId")]
-        public IActionResult GetGymGoerById(Guid id, string filterproperty, string filtervalue) 
+        public IActionResult GetWorkoutListByGymGoerId(Guid id, string filterproperty, string filtervalue) 
         {
             try
             {
-                GymGoer gymGoer = _gymGoerService.GetGymGoerById(id);
+                GymGoer gymGoer = _gymGoerService.GetGymGoerById(id, filterproperty, filtervalue);
                 GymGoerWorkoutsDTO gymGoerWorkoutsDTO = new GymGoerWorkoutsDTO(gymGoer.Id, gymGoer.Name, gymGoer.Email);
-                switch (filterproperty)
+                foreach (Workout workout in gymGoer.Workouts)
                 {
-                    case "all": 
-                        foreach (Workout workout in gymGoer.Workouts)
-                        {
-                            WorkoutDTO workoutDTO = new WorkoutDTO(workout);
-                            gymGoerWorkoutsDTO.Workouts.Add(workoutDTO);
-                        }
-                        break;
-                    case "exercise":
-                        foreach (Workout workout in gymGoer.Workouts)
-                        {
-                            if (workout.Exercise.Name == filtervalue)
-                            {
-                                WorkoutDTO workoutDTO = new WorkoutDTO(workout);
-                                gymGoerWorkoutsDTO.Workouts.Add(workoutDTO);
-                            }
-                        }
-                        break;
-                    case "musclegroup":
-                        foreach (Workout workout in gymGoer.Workouts)
-                        {
-                            foreach (MuscleGroup muscleGroup in workout.Exercise.MuscleGroups)
-                            {
-                                if (muscleGroup.Name == filtervalue)
-                                {
-                                    WorkoutDTO workoutDTO = new WorkoutDTO(workout);
-                                    gymGoerWorkoutsDTO.Workouts.Add(workoutDTO);
-                                }
-                            }
-                        }
-                        break;
-                    case "bodypart":
-                        foreach (Workout workout in gymGoer.Workouts)
-                        {
-                            foreach (MuscleGroup muscleGroup in workout.Exercise.MuscleGroups)
-                            {
-                                if (muscleGroup.BodyPart.Name == filtervalue)
-                                {
-                                    WorkoutDTO workoutDTO = new WorkoutDTO(workout);
-                                    gymGoerWorkoutsDTO.Workouts.Add(workoutDTO);
-                                }
-                            }
-                        }
-                        break;
+                    WorkoutDTO workoutDto = new WorkoutDTO(workout.Id, workout.Time, workout.Date);
+                    workoutDto.Exercise = new ExerciseDTO(workout.Exercise.Id, workout.Exercise.Name);
+                    foreach (MuscleGroup muscleGroup in workout.Exercise.MuscleGroups)
+                    {
+                        MuscleGroupDTO muscleGroupDto = new MuscleGroupDTO(muscleGroup.Id, muscleGroup.Name);
+                        muscleGroupDto.Bodypart = new BodypartDTO(muscleGroup.BodyPart.Id, muscleGroup.BodyPart.Name);
+                        workoutDto.Exercise.MuscleGroups.Add(muscleGroupDto);
+                    }
+                    foreach (Set set in workout.Sets)
+                    {
+                        workoutDto.Sets.Add(new SetDTO(set.Id, set.Reps, set.Weight, set.Time));
+                    }
+                    gymGoerWorkoutsDTO.Workouts.Add(workoutDto);
                 }
                 return Ok(gymGoerWorkoutsDTO);
             }

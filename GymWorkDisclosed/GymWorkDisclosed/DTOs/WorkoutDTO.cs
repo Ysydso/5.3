@@ -26,7 +26,9 @@ public class WorkoutDTO
         Exercise = new ExerciseDTO(workout.Exercise.Id, workout.Exercise.Name);
         foreach (MuscleGroup muscleGroup in workout.Exercise.MuscleGroups)
         {
-            Exercise.MuscleGroups.Add(new MuscleGroupDTO(muscleGroup.Id, muscleGroup.Name, muscleGroup.BodyPart.Name));
+            MuscleGroupDTO muscleGroupDto = new MuscleGroupDTO(muscleGroup.Id, muscleGroup.Name);
+            muscleGroupDto.Bodypart = new BodypartDTO(muscleGroup.BodyPart.Id, muscleGroup.BodyPart.Name);
+            Exercise.MuscleGroups.Add(muscleGroupDto);
         }
         Sets = new List<SetDTO>();
         foreach (Set set in workout.Sets)

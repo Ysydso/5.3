@@ -31,7 +31,8 @@ namespace GymWorkDisclosed.Controllers
                 ExerciseDTO exerciseDto = new ExerciseDTO(exercise.Id, exercise.Name);
                 foreach (MuscleGroup muscleGroup in exercise.MuscleGroups)
                 {
-                    MuscleGroupDTO muscleGroupDto = new MuscleGroupDTO(muscleGroup.Id, muscleGroup.Name, muscleGroup.BodyPart.Name);
+                    MuscleGroupDTO muscleGroupDto = new MuscleGroupDTO(muscleGroup.Id, muscleGroup.Name);
+                    muscleGroupDto.Bodypart = new BodypartDTO(muscleGroup.BodyPart.Id, muscleGroup.BodyPart.Name);
                     exerciseDto.MuscleGroups.Add(muscleGroupDto);
                 }
                 exerciseDTOs.Add(exerciseDto);
@@ -49,7 +50,8 @@ namespace GymWorkDisclosed.Controllers
                 ExerciseDTO exerciseDto = new ExerciseDTO(exercise.Id, exercise.Name);
                 foreach (MuscleGroup muscleGroup in exercise.MuscleGroups)
                 {
-                    MuscleGroupDTO muscleGroupDto = new MuscleGroupDTO(muscleGroup.Id, muscleGroup.Name, muscleGroup.BodyPart.Name);
+                    MuscleGroupDTO muscleGroupDto = new MuscleGroupDTO(muscleGroup.Id, muscleGroup.Name);
+                    muscleGroupDto.Bodypart = new BodypartDTO(muscleGroup.BodyPart.Id, muscleGroup.BodyPart.Name);
                     exerciseDto.MuscleGroups.Add(muscleGroupDto);
                 }
                 exerciseDTOs.Add(exerciseDto);
