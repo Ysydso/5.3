@@ -23,7 +23,6 @@ public class Workout
         Id = id;
         Date = date;
         Time = time;
-        Exercise = null;
         Sets = sets;
         Exercise = exercise;
     }
