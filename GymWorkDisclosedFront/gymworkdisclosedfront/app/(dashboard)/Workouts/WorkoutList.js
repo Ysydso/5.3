@@ -1,11 +1,9 @@
 import { getGymGoer } from '../../components/services/gymGoerService'
-import WorkoutFilters from "@/app/components/filters/Workoutfilters";
-import User from "@/app/components/User";
+import {getExerciseByGymGoerId} from "@/app/components/services/exerciseService";
 export default async function GymGoer(filtertype, filtervalue) {
-    const User = "d8ce900c-3c6e-444e-8f2e-7726773d08fc"
+    const User = "82e1b165-7baf-49c2-868f-7e45b2750d19"
     const gymgoer = await getGymGoer(User, filtertype, filtervalue)
-    WorkoutFilters(gymgoer)
-    console.log(filtertype)
+    console.log(gymgoer)
     return (
         <div>
             {/*<Filterbar gymgoer={gymgoer} />*/}

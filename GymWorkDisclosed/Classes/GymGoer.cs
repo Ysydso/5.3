@@ -16,6 +16,13 @@ public class GymGoer
         Password = password;
         Workouts = new List<Workout>();
     }
+    public GymGoer(Guid id, string name, string email)
+    {
+        Id = id;
+        Name = name;
+        Email = email;
+        Workouts = new List<Workout>();
+    }
     public void AddWorkout(Workout workout)
     {
         Workouts.Add(workout);

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import GymGoer from "@/app/(dashboard)/Workouts/WorkoutList";
+import {getExerciseByGymGoerId, getExercises} from "@/app/components/services/exerciseService";
 
 export default function Home() {
   return (
