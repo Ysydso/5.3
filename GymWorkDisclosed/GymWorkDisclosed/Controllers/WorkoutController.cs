@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BusinessLogic.Classes;
+﻿using BusinessLogic.Classes;
 using BusinessLogic.Services.Workout;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using BusinessLogic.Services.Workout;
-using BusinessLogic.Classes;
+using GymWorkDisclosed.DTOs;
 
 
 namespace GymWorkDisclosed.Controllers
@@ -30,10 +24,27 @@ namespace GymWorkDisclosed.Controllers
         }
 
         // GET: api/Workout/5
-        [HttpGet("{id:guid}", Name = "GetWorkoutsByGymGoerId")]
-        public List<Workout> WorkoutsByGymGoerId(Guid id) 
+        [HttpGet("{id:guid}", Name = "GetPersonalBestWorkoutsByGymGoerId")]
+        public IActionResult PersonalBestWorkoutsByGymGoerIdPerExercise(Guid id)
         {
-            return _workoutService.GetWorkoutsByGymGoerId(id);
+            List<Exercise> exercises = _workoutService.GetPersonalBestWorkoutsPerExerciseByGymGoerId(id);
+            List<ExerciseDTO> exerciseDTOs = new List<ExerciseDTO>();
+            foreach (Exercise exercise in exercises)
+            {
+                ExerciseDTO exerciseDTO = new ExerciseDTO(exercise.Id, exercise.Name);
+                foreach (Workout workout in exercise.Workouts)
+                {
+                    WorkoutDTO workoutDTO = new WorkoutDTO(workout.Id, workout.Time, workout.Date);
+                    foreach (Set set in workout.Sets)
+                    {
+                        SetDTO setDTO = new SetDTO(set.Id, set.Reps, set.Weight, set.Time);
+                        workoutDTO.Sets.Add(setDTO);
+                    }
+                    exerciseDTO.Workouts.Add(workoutDTO);
+                }
+                exerciseDTOs.Add(exerciseDTO);
+            }
+            return Ok(exerciseDTOs);
         }
 
         // POST: api/Exercise

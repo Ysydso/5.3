@@ -1,12 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using BusinessLogic.Classes;
 using BusinessLogic.Services.GymGoer;
-using DAL.Repositories;
 using GymWorkDisclosed.DTOs;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GymWorkDisclosed.Controllers
