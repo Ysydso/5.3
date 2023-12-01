@@ -27,7 +27,7 @@ public class GymGoerRepository : IGymGoerRepository
                 .ThenInclude(e => e.MuscleGroupExerciseEntities)
                 .ThenInclude(mge => mge.MuscleGroupEntity)
                 .ThenInclude(mg => mg.BodyPartEntity)
-            .FirstOrDefault(g => g.Id == id);
+            .First(g => g.Id == id);
         return gymGoerEntity.ToGymGoer();
     }
 }

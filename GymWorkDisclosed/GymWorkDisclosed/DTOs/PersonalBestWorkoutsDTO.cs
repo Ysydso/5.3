@@ -2,10 +2,10 @@
 
 public class PersonalBestWorkoutsDTO
 {
-    public List<ExerciseDTO> Exercises { get; set; }
+    public List<PersonalBestExerciseDTO> Exercises { get; set; }
     
-    public PersonalBestWorkoutsDTO(List<ExerciseDTO> exercises)
+    public PersonalBestWorkoutsDTO()
     {
-        Exercises = exercises;
+       Exercises = new List<PersonalBestExerciseDTO>();
     }
 }

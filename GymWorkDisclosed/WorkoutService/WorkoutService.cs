@@ -21,52 +21,44 @@ public class WorkoutService
     {
         List<Classes.Workout> workouts = _workoutRepository.GetWorkoutsByGymGoerId(gymGoerId);
         List<Exercise> personalBestWorkoutsPerExercise = new List<Exercise>();
-        foreach (Exercise exercise in workouts.Select(w => w.Exercise).Distinct())
+        foreach (Exercise exercise in workouts.Select(w => w.Exercise))
         {
-            Classes.Workout currentBestTimeWorkout = new Classes.Workout();
-            Classes.Workout currentBestWeightWorkout = new Classes.Workout();
-            Classes.Workout currentBestRepsWorkout = new Classes.Workout();
-            foreach (Classes.Workout workout in workouts.Where(w => w.Exercise.Id == exercise.Id))
+            if(!personalBestWorkoutsPerExercise.Any(e => e.Id == exercise.Id))
             {
-                if (currentBestWeightWorkout.Sets.Count == 0)
+                Classes.Workout currentBestTimeWorkout = new Classes.Workout();
+                Classes.Workout currentBestWeightWorkout = new Classes.Workout();
+                Classes.Workout currentBestRepsWorkout = new Classes.Workout();
+                foreach (Classes.Workout workout in workouts.Where(w => w.Exercise.Id == exercise.Id))
                 {
-                    currentBestWeightWorkout = workout;
-                }
-                else
-                {
-                    foreach (Set set in workout.Sets)
+                    if (currentBestWeightWorkout.Sets.Count == 0)
                     {
-                        if (set.Weight > currentBestWeightWorkout.Sets.Select(s => s.Weight).Max())
+                        currentBestWeightWorkout = workout;
+                    }
+                    else
+                    {
+                        foreach (Set set in workout.Sets)
                         {
-                            currentBestWeightWorkout = workout;
+                            if (set.Weight > currentBestWeightWorkout.Sets.Select(s => s.Weight).Max())
+                            {
+                                currentBestWeightWorkout = workout;
+                            }
                         }
                     }
-                }
-
-                if (currentBestRepsWorkout.Sets.Count == 0)
-                {
-                    currentBestRepsWorkout = workout;
-                }
-                else
-                {
-                    foreach (Set set in workout.Sets)
+                    if (workout.Time > currentBestTimeWorkout.Time)
                     {
-                        if (set.Reps > currentBestRepsWorkout.Sets.Select(s => s.Reps).Max())
-                        {
-                            currentBestRepsWorkout = workout;
-                        }
+                        currentBestTimeWorkout = workout;
                     }
-                }
-                if (workout.Time > currentBestTimeWorkout.Time)
-                {
-                    currentBestTimeWorkout = workout;
-                }
                 
+                } 
+                currentBestRepsWorkout = workouts.Where(w => w.Exercise.Id == exercise.Id)
+                    .OrderByDescending(w => w.Sets
+                        .Sum(s => s.Reps))
+                    .First();
+                exercise.Workouts.Add(currentBestWeightWorkout);
+                exercise.Workouts.Add(currentBestRepsWorkout);
+                exercise.Workouts.Add(currentBestTimeWorkout);
+                personalBestWorkoutsPerExercise.Add(exercise);
             }
-            exercise.Workouts.Add(currentBestWeightWorkout);
-            exercise.Workouts.Add(currentBestRepsWorkout);
-            exercise.Workouts.Add(currentBestTimeWorkout);
-            personalBestWorkoutsPerExercise.Add(exercise);
         }
        
         return personalBestWorkoutsPerExercise;
