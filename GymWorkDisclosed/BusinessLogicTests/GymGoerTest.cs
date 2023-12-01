@@ -95,8 +95,10 @@ public class GymGoerTest
            // Arrange
            
             // Act
-            GymGoer gymGoer = _gymGoerService.GetGymGoerById(new Guid("3dd294ec-c102-4613-8f14-060354cc46de"), "bodypart", "Arms");;
+            GymGoer gymGoer = _gymGoerService.GetGymGoerById(new Guid("3dd294ec-c102-4613-8f14-060354cc46de"), "bodypart", "Front");
+            GymGoer gymGoer2 = _gymGoerService.GetGymGoerById(new Guid("3dd294ec-c102-4613-8f14-060354cc46de"), "bodypart", "Arms");
             // Assert
-            Assert.AreEqual(3, gymGoer.Workouts.Count);
+            Assert.AreEqual(1, gymGoer.Workouts.Count);
+            Assert.AreEqual(4, gymGoer2.Workouts.Count);
     }
 }
