@@ -1,6 +1,6 @@
 ﻿namespace GymWorkDisclosed.DTOs;
 
-public class PBWorkoutDTO
+public class PbWorkoutDTO
 {
     public Guid Guid { get; set; }
     public int TimeInSeconds { get; set; }
@@ -9,7 +9,7 @@ public class PBWorkoutDTO
     public DateOnly Date { get; set; }
     public List<SetDTO> Sets { get; set; }
     public ExerciseDTO Exercise { get; set; }
-    public PBWorkoutDTO(Guid guid, int timeInSeconds, DateOnly date)
+    public PbWorkoutDTO(Guid guid, int timeInSeconds, DateOnly date)
     {
         Guid = guid;
         TimeInSeconds = timeInSeconds;

@@ -23,11 +23,10 @@ public class WorkoutService
         List<Exercise> personalBestWorkoutsPerExercise = new List<Exercise>();
         foreach (Exercise exercise in workouts.Select(w => w.Exercise))
         {
-            if(!personalBestWorkoutsPerExercise.Any(e => e.Id == exercise.Id))
+            if(!personalBestWorkoutsPerExercise.Exists(e => e.Id == exercise.Id))
             {
                 Classes.Workout currentBestTimeWorkout = new Classes.Workout();
                 Classes.Workout currentBestWeightWorkout = new Classes.Workout();
-                Classes.Workout currentBestRepsWorkout = new Classes.Workout();
                 foreach (Classes.Workout workout in workouts.Where(w => w.Exercise.Id == exercise.Id))
                 {
                     if (currentBestWeightWorkout.Sets.Count == 0)
@@ -50,7 +49,7 @@ public class WorkoutService
                     }
                 
                 } 
-                currentBestRepsWorkout = workouts.Where(w => w.Exercise.Id == exercise.Id)
+                Classes.Workout currentBestRepsWorkout = workouts.Where(w => w.Exercise.Id == exercise.Id)
                     .OrderByDescending(w => w.Sets
                         .Sum(s => s.Reps))
                     .First();
