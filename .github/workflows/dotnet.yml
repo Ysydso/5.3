@@ -28,7 +28,7 @@ jobs:
 
     - name: Build Projects
       run: dotnet build --no-restore
-      working-directory: Backend/GamePeekr
+      working-directory: GymWorkDisclosed
     
     - name: Test Projects
       run: dotnet test --no-build --verbosity normal
