@@ -30,6 +30,14 @@ jobs:
       run: dotnet build --no-restore
       working-directory: GymWorkDisclosed
     
-    - name: Test Projects
-      run: dotnet test --no-build --verbosity normal
-      working-directory: GymWorkDisclosed
+    
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Test Projects
+        run: dotnet test --no-build --verbosity normal
+        working-directory: GymWorkDisclosed
