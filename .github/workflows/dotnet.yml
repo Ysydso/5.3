@@ -49,5 +49,5 @@ jobs:
         working-directory: GymWorkDisclosed
         
       - name: Test Projects
-        run: dotnet test --no-build --verbosity normal
+        run: dotnet test --verbosity normal
         working-directory: GymWorkDisclosed
