@@ -10,6 +10,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.1"/>
         <PackageReference Include="Moq" Version="4.20.70" />
         <PackageReference Include="MSTest.TestAdapter" Version="2.2.10"/>
@@ -22,6 +26,22 @@
       <ProjectReference Include="..\ExerciseService\ExerciseService.csproj" />
       <ProjectReference Include="..\GymGoerService\GymGoerService.csproj" />
       <ProjectReference Include="..\WorkoutService\WorkoutService.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="obj\BusinessLogicTests.csproj.nuget.dgspec.json" />
+      <Content Include="obj\Debug\net7.0\BusinessLogicTests.AssemblyInfoInputs.cache" />
+      <Content Include="obj\Debug\net7.0\BusinessLogicTests.assets.cache" />
+      <Content Include="obj\Debug\net7.0\BusinessLogicTests.csproj.AssemblyReference.cache" />
+      <Content Include="obj\project.assets.json" />
+      <Content Include="obj\project.nuget.cache" />
+      <Content Include="obj\project.packagespec.json" />
+      <Content Include="obj\rider.project.model.nuget.info" />
+      <Content Include="obj\rider.project.restore.info" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="obj\Debug\net7.0\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" />
     </ItemGroup>
 
 </Project>
