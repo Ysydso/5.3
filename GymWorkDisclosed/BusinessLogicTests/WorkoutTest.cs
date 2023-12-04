@@ -76,7 +76,8 @@ public class WorkoutTest
         //Arrange
         
         //Act
-        List<Exercise> exercises = _workoutService.GetPersonalBestWorkoutsPerExerciseByGymGoerId(new Guid("3dd294ec-c102-4613-8f14-060354cc46de"));
+        List<Exercise> exercises = _workoutService.GetPersonalBestWorkoutsPerExerciseByGymGoerId(
+            new Guid("3dd294ec-c102-4613-8f14-060354cc46de"));
         Workout maxRepsWorkoutArmExtensions = exercises.SelectMany(e => e.Workouts)
                                         .Where(w => w.Exercise.Name == "Arm Extensions")
                                         .OrderByDescending(w => w.Sets

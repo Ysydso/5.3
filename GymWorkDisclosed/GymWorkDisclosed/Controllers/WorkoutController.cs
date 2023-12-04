@@ -28,23 +28,47 @@ namespace GymWorkDisclosed.Controllers
         public IActionResult PersonalBestWorkoutsByGymGoerIdPerExercise(Guid id)
         {
             List<Exercise> exercises = _workoutService.GetPersonalBestWorkoutsPerExerciseByGymGoerId(id);
-            List<ExerciseDTO> exerciseDTOs = new List<ExerciseDTO>();
+            PersonalBestWorkoutsDTO personalBestWorkoutsDTO = new PersonalBestWorkoutsDTO();
             foreach (Exercise exercise in exercises)
             {
-                ExerciseDTO exerciseDTO = new ExerciseDTO(exercise.Id, exercise.Name);
+                Workout maxweight = new Workout();
+                Workout maxtime = new Workout();
+                Workout maxreps = new Workout();
+                PersonalBestExerciseDTO personalBestExerciseDTO = new PersonalBestExerciseDTO(exercise.Id, exercise.Name);
                 foreach (Workout workout in exercise.Workouts)
                 {
-                    WorkoutDTO workoutDTO = new WorkoutDTO(workout.Id, workout.Time, workout.Date);
-                    foreach (Set set in workout.Sets)
+                    if (workout.Time > maxtime.Time)
                     {
-                        SetDTO setDTO = new SetDTO(set.Id, set.Reps, set.Weight, set.Time);
-                        workoutDTO.Sets.Add(setDTO);
+                        maxtime = workout;
                     }
-                    exerciseDTO.Workouts.Add(workoutDTO);
+                    if (maxweight.Sets.Count != 0 )
+                    {
+                        if (workout.Sets.Select(s => s.Weight).Max() > maxweight.Sets.Select(s => s.Weight).Max())
+                        {
+                            maxweight = workout;
+                        }
+                    }
+                    else
+                    {
+                        maxweight = workout;
+                    }
+
+                    maxreps = exercise.Workouts.OrderByDescending(w => w.Sets.Sum(s => s.Reps)).First();
                 }
-                exerciseDTOs.Add(exerciseDTO);
+
+                PbWorkoutDTO mostTime = new PbWorkoutDTO(maxweight.Id, maxweight.Time, maxweight.Date);
+
+                PbWorkoutDTO mostWeight = new PbWorkoutDTO(maxtime.Id, maxtime.Time, maxtime.Date);
+                mostWeight.MaxWeight = maxweight.Sets.Select(s => s.Weight).Max();
+                PbWorkoutDTO mostReps = new PbWorkoutDTO(maxreps.Id, maxreps.Time, maxreps.Date);
+                mostReps.TotalReps = maxreps.Sets.Select(s => s.Reps).Max();
+                personalBestExerciseDTO.BestRepsWorkout = mostReps;
+                personalBestExerciseDTO.BestTimeWorkout = mostTime;
+                personalBestExerciseDTO.BestWeightWorkout = mostWeight;
+                personalBestWorkoutsDTO.Exercises.Add(personalBestExerciseDTO);
             }
-            return Ok(exerciseDTOs);
+
+            return Ok(personalBestWorkoutsDTO);
         }
 
         // POST: api/Exercise
