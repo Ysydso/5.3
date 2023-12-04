@@ -60,7 +60,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           sonar-project-key: "${{ secrets.PROJECT_KEY }}"
-          sonar-organization: "${{ secret.ORG_KEY }}"
+          sonar-organization: "${{ secrets.ORG_KEY }}"
 
     
   test:
