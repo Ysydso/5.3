@@ -7,6 +7,7 @@ export default function Navbar() {
         <h2>GymWorkDisclosed</h2>
         <Link href='/'> Home </Link>
         <Link href="/Workouts"> Workouts </Link>
+        <Link href="/Workouts/PersonalBests"> Personal Bests </Link>
     </nav>
     )
 }

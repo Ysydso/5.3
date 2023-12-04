@@ -26,4 +26,9 @@ public class Workout
         Sets = sets;
         Exercise = exercise;
     }
+
+    public Workout()
+    {
+        Sets = new List<Set>();
+    }
 }
