@@ -51,8 +51,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_PROJECT_KEY: ${{ secrets.PROJECT_KEY }}
-          SONAR_ORGANIZATION_KEY: ${{ secrets.ORG_KEY }}
+          sonar.projectKey: ${{ secrets.PROJECT_KEY }}
+          sonar.organization: ${{ secrets.ORG_KEY }}
 
 
     
