@@ -1,6 +1,6 @@
 ﻿using BusinessLogic.Classes;
 using BusinessLogic.Services.Workout;
-using DAL.Entities;
+using DAL.DBO;
 using Microsoft.EntityFrameworkCore;
 namespace DAL.Repositories;
 

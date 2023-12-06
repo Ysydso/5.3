@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using BusinessLogic.Classes;
 
-namespace DAL.Entities;
+namespace DAL.DBO;
 
 public class GymGoerEntity
 {

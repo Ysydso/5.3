@@ -1,5 +1,7 @@
 ﻿using BusinessLogic.Classes;
-namespace DAL.Entities;
+
+
+namespace DAL.DBO;
 
 public class BodyPartEntity
 {

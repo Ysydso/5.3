@@ -1,7 +1,6 @@
 ﻿using BusinessLogic.Classes;
-using DAL.Entities;
 using BusinessLogic.Services.GymGoer;
-using DAL.Entities;
+using DAL.DBO;
 using Microsoft.EntityFrameworkCore;
 
 

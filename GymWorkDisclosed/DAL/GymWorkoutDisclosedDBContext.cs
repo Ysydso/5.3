@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using DAL.Entities;
+﻿using DAL.DBO;
+using Microsoft.EntityFrameworkCore;
 
 namespace DAL;
 
