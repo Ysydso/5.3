@@ -24,7 +24,21 @@ jobs:
         fetch-depth: 0
     - name: Checkout code
       uses: actions/checkout@v2
-
+    
+    - name: Cache SonarCloud packages
+      uses: actions/cache@v3
+      with:
+        path: ~\sonar\cache
+        key: ${{ runner.os }}-sonar
+        restore-keys: ${{ runner.os }}-sonar
+    - name: Cache SonarCloud scanner
+      id: cache-sonar-scanner
+      uses: actions/cache@v3
+      with:
+        path: .\.sonar\scanner
+        key: ${{ runner.os }}-sonar-scanner
+        restore-keys: ${{ runner.os }}-sonar-scanner
+        
     - name: Setup .NET SDK
       uses: actions/setup-dotnet@v3
       with:
@@ -33,43 +47,20 @@ jobs:
     - name: Restore Dependencies
       run: dotnet restore
       working-directory: GymWorkDisclosed
-
-    - name: Build Projects
-      run: dotnet build --no-restore
-      working-directory: GymWorkDisclosed
-  codeanalysis:
-    needs: build
-    runs-on: ubuntu-latest
     
-    name: SonarCloud
-    steps:
-      - name: Cache SonarCloud packages
-        uses: actions/cache@v3
-        with:
-          path: ~\sonar\cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
-      - name: Cache SonarCloud scanner
-        id: cache-sonar-scanner
-        uses: actions/cache@v3
-        with:
-          path: .\.sonar\scanner
-          key: ${{ runner.os }}-sonar-scanner
-          restore-keys: ${{ runner.os }}-sonar-scanner
-      - name: Install SonarCloud scanner
-        if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
-        run: |
-          mkdir -p ~/.sonar/scanner
-          dotnet tool update dotnet-sonarscanner --tool-path ~/.sonar/scanner
-      - name: Sonarcloud
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: |
-          ~/.sonar/scanner/dotnet-sonarscanner begin /k:"${{secrets.PROJECT_KEY }}" /o:"${{secrets.ORG_KEY }}" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          dotnet clean $GITHUB_WORKSPACE/GymWorkDisclosed/BackendGymWorkDisclosed.sln
-          dotnet build $GITHUB_WORKSPACE/GymWorkDisclosed/BackendGymWorkDisclosed.sln
-          ~/.sonar/scanner/dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+    - name: Install SonarCloud scanner
+      if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
+      run: |
+        mkdir -p ~/.sonar/scanner
+        dotnet tool update dotnet-sonarscanner --tool-path ~/.sonar/scanner
+    - name: Sonarcloud
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      run: |
+        ~/.sonar/scanner/dotnet-sonarscanner begin /k:"${{secrets.PROJECT_KEY }}" /o:"${{secrets.ORG_KEY }}" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+        dotnet build --no-restore -c Release GymWorkDisclosed
+        ~/.sonar/scanner/dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
         
 
     
