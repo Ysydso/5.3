@@ -27,12 +27,4 @@
       <ProjectReference Include="..\WorkoutService\WorkoutService.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Compile Include="obj\Debug\net7.0\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="obj\Debug\net7.0\" />
-    </ItemGroup>
-
 </Project>
