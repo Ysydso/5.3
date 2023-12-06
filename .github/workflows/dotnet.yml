@@ -55,7 +55,7 @@ jobs:
         dotnet tool update dotnet-sonarscanner --tool-path ~/.sonar/scanner
     - name: Build Projects
       run: dotnet build --no-restore
-      working-directory: Backend/GamePeekr
+      working-directory: GymWorkDisclosed
         
     - name: Sonarcloud
       env:
