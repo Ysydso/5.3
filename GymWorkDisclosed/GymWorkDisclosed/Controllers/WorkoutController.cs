@@ -61,7 +61,7 @@ namespace GymWorkDisclosed.Controllers
                 PbWorkoutDTO mostWeight = new PbWorkoutDTO(maxtime.Id, maxtime.Time, maxtime.Date);
                 mostWeight.MaxWeight = maxweight.Sets.Select(s => s.Weight).Max();
                 PbWorkoutDTO mostReps = new PbWorkoutDTO(maxreps.Id, maxreps.Time, maxreps.Date);
-                mostReps.TotalReps = maxreps.Sets.Select(s => s.Reps).Max();
+                mostReps.TotalReps = maxreps.Sets.Select(s => s.Reps).Sum();
                 personalBestExerciseDTO.BestRepsWorkout = mostReps;
                 personalBestExerciseDTO.BestTimeWorkout = mostTime;
                 personalBestExerciseDTO.BestWeightWorkout = mostWeight;
