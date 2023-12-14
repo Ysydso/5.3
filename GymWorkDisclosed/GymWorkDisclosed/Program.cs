@@ -20,15 +20,25 @@ builder.Services.AddScoped<ExerciseService>();
 IConfigurationRoot config = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json")
     .Build();
+string env = builder.Environment.EnvironmentName;
+if (env == "Testing")
+{
+    builder.Services.AddDbContext<GymWorkoutDisclosedDBContext>(
+        options =>
+        {
+            options.UseMySql(config.GetConnectionString("TestGymWorkDB"),
+                ServerVersion.AutoDetect(config.GetConnectionString("TestGymWorkDB")));
+        }, ServiceLifetime.Transient);
+}
+else
 {
     builder.Services.AddDbContext<GymWorkoutDisclosedDBContext>(
         options =>
         {
             options.UseMySql(config.GetConnectionString("MySqlConnection"),
                 ServerVersion.AutoDetect(config.GetConnectionString("MySqlConnection")));
-        }, ServiceLifetime.Transient);
+        }, ServiceLifetime.Transient); 
 }
-
 // Add services to the container.
 
 builder.Services.AddControllers();
