@@ -87,4 +87,4 @@ jobs:
         
       - name: Test Projects
         run: dotnet test --verbosity normal
-        working-directory: GymWorkDisclosed
+        working-directory: GymWorkDisclosed/BusinessLogicTests
