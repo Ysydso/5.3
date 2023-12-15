@@ -109,11 +109,11 @@ jobs:
         uses: mirromutth/mysql-action@v1.1
         with:
           host port: 5053
-          mysql database: 'GymWorkDisclosed'
+          mysql database: 'gymworkdisclosed'
           mysql root password: 'rootpassword'
         
       - name: Integration Test Projects
         run: dotnet test --verbosity normal
         working-directory: GymWorkDisclosed/IntegrationTests
         env:
-         ConnectionStrings__DefaultConnection: "Server=localhost,5053;Uid=root;Database=GymWorkDisclosed;Pwd=rootpassword;"
+         ConnectionStrings__DefaultConnection: "Server=localhost,5053;Uid=root;Database=gymworkdisclosed;Pwd=rootpassword;"
