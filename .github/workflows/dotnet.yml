@@ -99,6 +99,7 @@ jobs:
           MYSQL_DATABASE: GymWorkTestDB 
         ports:
           - "3306:3306"
+      
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -115,3 +116,5 @@ jobs:
       - name: Integration Test Projects
         run: dotnet test --verbosity normal
         working-directory: GymWorkDisclosed/IntegrationTests
+        env:
+         ConnectionStrings__DefaultConnection: "Server=localhost,5053;Uid=root;Database=GymWorkTestDB;Pwd=rootpassword;"
