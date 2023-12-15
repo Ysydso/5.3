@@ -91,15 +91,7 @@ jobs:
   integration-test:
     needs: build
     runs-on: ubuntu-latest
-    services:
-      mysql:
-        image: mysql
-        env:
-          MYSQL_ROOT_PASSWORD: rootpassword
-          MYSQL_DATABASE: GymWorkDisclosed 
-        ports:
-          - "5053:3306"
-      
+  
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -112,6 +104,13 @@ jobs:
       - name: Restore Dependencies
         run: dotnet restore
         working-directory: GymWorkDisclosed
+
+      - name: Setup MySQL
+        uses: mirromutth/mysql-action@v1.1
+        with:
+          host port: 5053
+          mysql database: 'GymWorkDisclosed'
+          mysql root password: 'rootpassword'
         
       - name: Integration Test Projects
         run: dotnet test --verbosity normal
