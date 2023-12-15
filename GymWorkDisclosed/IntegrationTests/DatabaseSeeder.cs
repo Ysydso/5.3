@@ -142,7 +142,7 @@ internal static class DatabaseSeeder
             {
               Id  = Guid.NewGuid(),
               Date = DateTime.Now,
-              Time = 200,
+              Time = 300,
               GymGoerId = gymGoerEntity.Id,
               GymGoerEntity = gymGoerEntity,
               ExerciseId = exerciseEntities[0].Id,
