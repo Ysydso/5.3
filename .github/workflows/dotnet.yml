@@ -96,7 +96,7 @@ jobs:
         image: mysql
         env:
           MYSQL_ROOT_PASSWORD: rootpassword
-          MYSQL_DATABASE: GymWorkTestDB 
+          MYSQL_DATABASE: GymWorkDisclosed 
         ports:
           - "5053:3306"
       
@@ -117,4 +117,4 @@ jobs:
         run: dotnet test --verbosity normal
         working-directory: GymWorkDisclosed/IntegrationTests
         env:
-         ConnectionStrings__DefaultConnection: "Server=localhost,5053;Uid=root;Database=GymWorkTestDB;Pwd=rootpassword;"
+         ConnectionStrings__DefaultConnection: "Server=localhost,5053;Uid=root;Database=GymWorkDisclosed;Pwd=rootpassword;"
