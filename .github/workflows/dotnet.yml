@@ -93,7 +93,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       mysql:
-        image: mysql:8.0.29
+        image: mysql
         env:
           MYSQL_ROOT_PASSWORD: rootpassword
           MYSQL_DATABASE: GymWorkTestDB 
