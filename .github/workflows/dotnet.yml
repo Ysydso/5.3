@@ -91,20 +91,7 @@ jobs:
   integration-test:
     needs: build
     runs-on: ubuntu-latest
-    services:
-      mysql:
-        image: mysql:8.0.29
-        env:
-          MYSQL_ROOT_PASSWORD: rootpassword
-          MYSQL_DATABASE: GymWorkTestDB 
-        ports:
-          - "3306:3306"
-        options: >-
-          --health-cmd "mysqladmin ping -ppass"
-          --health-interval 10s
-          --health-start-period 10s
-          --health-timeout 5s
-          --health-retries 10
+  
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -117,6 +104,12 @@ jobs:
       - name: Restore Dependencies
         run: dotnet restore
         working-directory: GymWorkDisclosed
+
+      - name: Setup MySQL
+        uses: mirromutth/mysql-action@v1.1
+        with:
+          mysql database: 'gymworkdisclosed'
+          mysql root password: 'rootpassword'
         
       - name: Integration Test Projects
         integration-test:

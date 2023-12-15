@@ -20,7 +20,9 @@ builder.Services.AddScoped<ExerciseService>();
 IConfigurationRoot config = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json")
     .Build();
+
 string env = builder.Environment.EnvironmentName;
+
 if (env == "Testing")
 {
     builder.Services.AddDbContext<GymWorkoutDisclosedDBContext>(
@@ -70,7 +72,9 @@ app.MapControllers();
 
 app.Run();
 
-public partial class Program
+namespace GymWorkDisclosed
 {
-    protected Program() {}
+    public class GymWorkDisclosedProgram
+    {
+    }
 }

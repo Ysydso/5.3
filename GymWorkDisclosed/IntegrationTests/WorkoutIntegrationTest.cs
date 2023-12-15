@@ -1,20 +1,26 @@
+using System.Diagnostics;
 using DAL;
+using GymWorkDisclosed;
 using IntegrationTests.JsonSerialiseObjects.Exercise;
 using IntegrationTests.JsonSerialiseObjects.GymGoer;
 using IntegrationTests.JsonSerialiseObjects.Workouts;
+using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using MySqlConnector;
 using Newtonsoft.Json;
+using Xunit;
 
 namespace IntegrationTests;
 
-[TestClass]
-public class WorkoutIntegrationTest
+public class WorkoutIntegrationTest : IClassFixture<WebApplicationFactory<GymWorkDisclosedProgram>>
 {
-    private HttpClient _client;
-    private GymWorkoutDisclosedDBContext _context;
 
-    [TestInitialize]
-    public void TestInitialize()
+    private readonly WebApplicationFactory<GymWorkDisclosedProgram> _factory;
+    private readonly GymWorkoutDisclosedDBContext? _context;
+    private readonly HttpClient _client;
+    
+    public WorkoutIntegrationTest(WebApplicationFactory<GymWorkDisclosedProgram> webApplicationFactory)
     {
         var factory = new GymWorkDisclosedWebAppFactory();
         _client = factory.CreateClient();
@@ -23,16 +29,25 @@ public class WorkoutIntegrationTest
             ServerVersion.AutoDetect("Server=localhost;Uid=root;Database=gymworkdisclosedtest;Pwd=rootpassword;"));
         GymWorkoutDisclosedDBContext context = new GymWorkoutDisclosedDBContext(options.Options);
         context.Database.EnsureCreated();
+
         _context = context;
+        _client = _factory.CreateClient();
+        try
+        {
+            if (context is null) return;
+            context.Database.EnsureCreated();
+            DatabaseSeeder.Initialise(context);
+            DatabaseSeeder.Seed();
+        }
+        catch (MySqlException e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
     
-    [TestCleanup]
-    public void Cleanup()
-    {
-        _context.Database.EnsureDeleted();
-    }
     
-    [TestMethod]
+    [Fact]
     public async Task ShouldRetrieveGymGoerFromApi()
     {
         //arrange
@@ -51,10 +66,10 @@ public class WorkoutIntegrationTest
         GymGoerSerialiseObject gymGoer = JsonConvert.DeserializeObject<GymGoerSerialiseObject>(jsonString);
 
         // Assert 
-        Assert.AreEqual(3, gymGoer.Workouts.Count);
-        Assert.AreEqual("Test", gymGoer.Name);
+        Assert.Equal(3, gymGoer.Workouts.Count);
+        Assert.Equal("Test", gymGoer.Name);
     }
-    [TestMethod]
+    [Fact]
     public async Task ShouldRetrievePersonalBestWorkoutsFromApi()
     {
         //arrange
@@ -76,10 +91,16 @@ public class WorkoutIntegrationTest
         int tricepMaxWeight = personalBestWorkoutsPerWorkoutsPerExercise.Exercises.Where(e => e.Name == "Tricep Extension").FirstOrDefault().BestWeightWorkout.MaxWeight;
         int bicepCurlLongestTime = personalBestWorkoutsPerWorkoutsPerExercise.Exercises.Where(e => e.Name == "Bicep Curl").FirstOrDefault().BestTimeWorkout.TimeInSeconds;
         // Assert 
-        Assert.AreEqual(100, bicepCurlTotalReps);
-        Assert.AreEqual(30, tricepMaxWeight);
-        Assert.AreEqual(300, bicepCurlLongestTime);
+        Assert.Equal(100, bicepCurlTotalReps);
+        Assert.Equal(30, tricepMaxWeight);
+        Assert.Equal(300, bicepCurlLongestTime);
     }
 
 
+    public void Dispose()
+    {
+        _client.Dispose();
+        _context.Database.EnsureDeleted();
+        _context.Dispose();
+    }
 }
