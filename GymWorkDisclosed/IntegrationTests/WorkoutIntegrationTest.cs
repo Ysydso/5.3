@@ -12,18 +12,15 @@ public class WorkoutIntegrationTest
 {
     private HttpClient _client;
     private GymWorkoutDisclosedDBContext _context;
-
     [TestInitialize]
     public void TestInitialize()
     {
         var factory = new GymWorkDisclosedWebAppFactory();
         _client = factory.CreateClient();
         var options = new DbContextOptionsBuilder<GymWorkoutDisclosedDBContext>();
-        options.UseMySql("Server=localhost,5053;Uid=root;Database=GymWorkTestDB;Pwd=rootpassword;",
-            ServerVersion.AutoDetect("Server=localhost,5053;Uid=root;Database=GymWorkTestDB;Pwd=rootpassword;"));
+        options.UseMySql("Server=localhost,5053;Uid=root;Database=GymWorkDisclosed;Pwd=rootpassword;",
+            ServerVersion.AutoDetect("Server=localhost,5053;Uid=root;Database=GymWorkDisclosed;Pwd=rootpassword;"));
         GymWorkoutDisclosedDBContext context = new GymWorkoutDisclosedDBContext(options.Options);
-        context.Database.EnsureDeleted();
-        context.Database.Migrate();
         context.Database.EnsureCreated();
         _context = context;
     }
