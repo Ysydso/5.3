@@ -116,4 +116,4 @@ jobs:
         run: dotnet test --verbosity normal
         working-directory: GymWorkDisclosed/IntegrationTests
         env:
-         ConnectionStrings__DefaultConnection: "Server=localhost,5053;Uid=root;Database=gymworkdisclosed;Pwd=rootpassword;"
+         ENV: "Testing"
