@@ -22,9 +22,14 @@ public class WorkoutIntegrationTest : IClassFixture<WebApplicationFactory<GymWor
     
     public WorkoutIntegrationTest(WebApplicationFactory<GymWorkDisclosedProgram> webApplicationFactory)
     {
-        _factory = webApplicationFactory;
-        using IServiceScope serviceScope = _factory.Services.GetRequiredService<IServiceScopeFactory>().CreateScope();
-        GymWorkoutDisclosedDBContext? context = serviceScope.ServiceProvider.GetService<GymWorkoutDisclosedDBContext>();
+        var factory = new GymWorkDisclosedWebAppFactory();
+        _client = factory.CreateClient();
+        var options = new DbContextOptionsBuilder<GymWorkoutDisclosedDBContext>();
+        options.UseMySql("Server=localhost;Uid=root;Database=gymworkdisclosedtest;Pwd=rootpassword;",
+            ServerVersion.AutoDetect("Server=localhost;Uid=root;Database=gymworkdisclosedtest;Pwd=rootpassword;"));
+        GymWorkoutDisclosedDBContext context = new GymWorkoutDisclosedDBContext(options.Options);
+        context.Database.EnsureCreated();
+
         _context = context;
         _client = _factory.CreateClient();
         try
