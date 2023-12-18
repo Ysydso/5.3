@@ -3,6 +3,7 @@ using IntegrationTests.JsonSerialiseObjects.Exercise;
 using IntegrationTests.JsonSerialiseObjects.GymGoer;
 using IntegrationTests.JsonSerialiseObjects.Workouts;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 
 namespace IntegrationTests;
