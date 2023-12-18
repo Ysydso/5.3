@@ -9,6 +9,7 @@ namespace GymWorkDisclosed.Controllers
     [ApiController]
     public class GymGoerController : ControllerBase
     {
+        
         private readonly GymGoerService _gymGoerService;
         
         public GymGoerController(GymGoerService gymGoerService)
