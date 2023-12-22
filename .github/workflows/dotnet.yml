@@ -43,6 +43,11 @@ jobs:
   test:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      checks: write
+      contents: read
+      packages: write
+    
 
     steps:
       - name: Checkout code
@@ -69,12 +74,14 @@ jobs:
           path: "**/testresult-unittests.trx"
           reporter: dotnet-trx
           fail-on-error: 'true'
-          token: '${{ secrets.GITHUB_TOKEN }}'
-      
         
   integration-test:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      checks: write
+      contents: read
+      packages: write
   
     steps:
       - name: Checkout code
