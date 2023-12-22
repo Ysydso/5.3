@@ -58,7 +58,7 @@ jobs:
         working-directory: GymWorkDisclosed
         
       - name: Test Projects
-        run: dotnet test --verbosity normal
+        run: dotnet test --logger "trx;LogFileName=testresult-unittests.trx"
         working-directory: GymWorkDisclosed/BusinessLogicTests
         
       - name: Test Report
@@ -66,7 +66,7 @@ jobs:
         if: always()
         with: 
           name: gymworkdisclosed-unit-tests
-          path: "*/testresult.trx"
+          path: "*/testresult-unittests.trx"
           reporter: dotnet-trx
           fail-on-error: 'true'
       
@@ -95,7 +95,7 @@ jobs:
           mysql root password: 'rootpassword'
         
       - name: Integration Test Projects
-        run: dotnet test --verbosity normal
+        run: dotnet test --logger "trx;LogFileName=testresult-integration.trx"
         working-directory: GymWorkDisclosed/IntegrationTests
         env:
          ASPNETCORE_ENVIRONMENT: "Testing"
@@ -105,7 +105,7 @@ jobs:
         if: always()
         with: 
           name: gymworkdisclosed-integrationtest-tests
-          path: "*/testresult.trx"
+          path: "*/testresult-integration.trx"
           reporter: dotnet-trx
           fail-on-error: 'true'
   
