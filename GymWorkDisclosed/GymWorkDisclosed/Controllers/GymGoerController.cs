@@ -16,12 +16,6 @@ namespace GymWorkDisclosed.Controllers
         {
             _gymGoerService = gymGoerService;
         }
-        // GET: api/GymGoer
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
 
         // GET: api/GymGoer/5
         [HttpGet("{id:guid}", Name = "GetWorkoutListByGymGoerId")]
@@ -55,24 +49,6 @@ namespace GymWorkDisclosed.Controllers
                 throw;
             }
           
-        }
-
-        // POST: api/GymGoer
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT: api/GymGoer/5
-        [HttpPut("{id:guid}")]
-        public void Put(Guid id, [FromBody] string value)
-        {
-        }
-
-        // DELETE: api/GymGoer/5
-        [HttpDelete("{id:guid}")]
-        public void Delete(Guid id)
-        {
         }
     }
 }

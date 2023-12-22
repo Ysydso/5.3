@@ -16,12 +16,6 @@ namespace GymWorkDisclosed.Controllers
         {
             _workoutService = workoutService;
         }
-        // GET: api/Exercise
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
 
         // GET: api/Workout/5
         [HttpGet("{id:guid}", Name = "GetPersonalBestWorkoutsByGymGoerId")]
@@ -69,24 +63,6 @@ namespace GymWorkDisclosed.Controllers
             }
 
             return Ok(personalBestWorkoutsDTO);
-        }
-
-        // POST: api/Exercise
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT: api/Exercise/5
-        [HttpPut("{id}")]
-        public void Put(Guid id, [FromBody] string value)
-        {
-        }
-
-        // DELETE: api/Exercise/5
-        [HttpDelete("{id}")]
-        public void Delete(Guid id)
-        {
         }
     }
 }

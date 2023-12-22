@@ -17,23 +17,5 @@ public class WorkoutDTO
         Date = date;
         Sets = new List<SetDTO>();
     }
-
-    public WorkoutDTO(Workout workout)
-    {
-        Guid = workout.Id;
-        TimeInSeconds = workout.Time;
-        Date = workout.Date;
-        Exercise = new ExerciseDTO(workout.Exercise.Id, workout.Exercise.Name);
-        foreach (MuscleGroup muscleGroup in workout.Exercise.MuscleGroups)
-        {
-            MuscleGroupDTO muscleGroupDto = new MuscleGroupDTO(muscleGroup.Id, muscleGroup.Name);
-            muscleGroupDto.Bodypart = new BodypartDTO(muscleGroup.BodyPart.Id, muscleGroup.BodyPart.Name);
-            Exercise.MuscleGroups.Add(muscleGroupDto);
-        }
-        Sets = new List<SetDTO>();
-        foreach (Set set in workout.Sets)
-        {
-            Sets.Add(new SetDTO(set.Id, set.Reps, set.Weight, set.Time));
-        }
-    }
+    
 }

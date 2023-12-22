@@ -6,7 +6,6 @@ public class Set
     public int Reps { get; private set; }
     public int Weight { get; private set; }
     public int Time { get; private set; }
-    public Workout Workout { get; private set; }
     
     public Set(Guid id, int reps, int weight, int time)
     {

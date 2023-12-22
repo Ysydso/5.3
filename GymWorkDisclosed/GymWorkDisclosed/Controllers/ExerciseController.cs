@@ -53,30 +53,5 @@ namespace GymWorkDisclosed.Controllers
             }
             return Ok(exerciseDTOs);
         }
-
-        // GET: api/Exercise/5
-        [HttpGet("{id:guid}", Name = "GetExerciseById")]
-        public string Get(Guid id)
-        {
-            return "value";
-        }
-
-        // POST: api/Exercise
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT: api/Exercise/5
-        [HttpPut("{id}")]
-        public void Put(Guid id, [FromBody] string value)
-        {
-        }
-
-        // DELETE: api/Exercise/5
-        [HttpDelete("{id}")]
-        public void Delete(Guid id)
-        {
-        }
     }
 }
