@@ -1,9 +1,8 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
-
-// components
-
+import { getServerSession} from "next-auth";
 import Navbar from './components/Navbar'
+import SessionProvider from "./components/SessionProvider"
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -13,12 +12,18 @@ export const metadata = {
   description: 'Created to track workouts',
 }
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({children}) {
+  const session = await getServerSession()
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Navbar />
-        {children}</body>
-    </html>
+      <html lang="en">
+        <body className={inter.className}>
+          <SessionProvider session={session}>
+              <main>
+                  <Navbar/>
+                  {children}
+              </main>
+          </SessionProvider>
+        </body>
+      </html>
   )
 }

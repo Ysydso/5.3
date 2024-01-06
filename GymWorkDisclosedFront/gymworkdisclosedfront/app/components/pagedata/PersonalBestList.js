@@ -1,8 +1,11 @@
 ﻿import {getPersonalBests} from "@/app/components/services/workoutService";
+import {getToken} from "next-auth/jwt";
+import {useSession} from "next-auth/react";
+import {NextRequest} from "next/server";
 
 export default async function PersonalBestList() {
-    const User = "d8ce900c-3c6e-444e-8f2e-7726773d08fc"
-    const PersonalBests = await getPersonalBests(User)
+    const User = "875b0352-2ca1-4c7a-811e-433470cd7e56"
+    const PersonalBests = await getPersonalBests(User, NextRequest)
     return (
         <div>
             {PersonalBests.exercises.map(personalbest => (

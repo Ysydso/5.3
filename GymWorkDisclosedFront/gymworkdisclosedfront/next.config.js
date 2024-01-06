@@ -30,4 +30,12 @@ module.exports = {
             },
         ];
     },
+    env: {
+        NEXTAUTH_URL: "http://localhost:3000",
+        NEXTAUTH_SECRET: "j/9bfoyBXvgqdO/zi/nRfUlr8VDuyPI5B0DgPCa4Nws=",
+
+        GOOGLE_CLIENT_ID: "230619720980-d0iklanmnfpgrt2jee5mj7hndv9md8f2.apps.googleusercontent.com",
+        GOOGLE_CLIENT_SECRET: "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",
+
+    }
 };

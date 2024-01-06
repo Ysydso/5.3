@@ -30,8 +30,7 @@ nav {
     pb-4
     border-b-2 border-gray-200
     flex items-center gap-5 
-    my-10 mx-auto 
-    max-w-5xl;
+    
 }
 nav a, nav span {
   @apply text-gray-500;
@@ -45,11 +44,12 @@ main nav {
 
 /* button styles */
 button {
-  @apply 
-    px-3 py-2 
-    rounded-sm 
-    flex justify-between items-center gap-2
-    text-sm;
+  @apply
+    rounded-full
+    bg-red-800
+    text-white
+    py-2 px-4
+  
 }
 button:hover {
   @apply bg-opacity-90;
