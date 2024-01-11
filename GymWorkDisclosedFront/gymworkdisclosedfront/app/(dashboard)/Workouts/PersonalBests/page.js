@@ -1,6 +1,17 @@
-﻿import PersonalBestList from "../../../components/pagedata/PersonalBestList";
+﻿"use client";
+import PersonalBestList from "../../../components/pagedata/PersonalBestList";
+import {auth} from "../../../components/firebase/firebase.Config";
+import {getUser} from "../../../components/services/userService";
 
-export default async function PersonalBests(){
+
+export default function PersonalBests(){
+    const email = auth.currentUser.email;
+    const token = auth.currentUser.getIdToken();
+    const user = getUser(email, token)
+
+    const data = {userObj, token};
+    console.log("user after retrieval", user);
+
     return (
         <main>
             <nav>
@@ -9,7 +20,8 @@ export default async function PersonalBests(){
                     <p><small>Personal Bests from user</small></p>
                 </div>
             </nav>
-            <PersonalBestList/>
+            <PersonalBestList data={data}/>
         </main>
     )
 }
+
