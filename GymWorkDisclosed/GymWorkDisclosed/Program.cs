@@ -1,9 +1,12 @@
+using AuthService;
 using BusinessLogic.Services.ExerciseService;
 using BusinessLogic.Services.GymGoer;
 using BusinessLogic.Services.Workout;
 using Microsoft.EntityFrameworkCore;
 using DAL;
 using DAL.Repositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +15,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddTransient<IGymGoerRepository, GymGoerRepository>();
 builder.Services.AddTransient<IWorkoutRepository, WorkoutRepository>();
 builder.Services.AddTransient<IExerciseRepository, ExerciseRepository>();
+builder.Services.AddTransient<IAuthRepository, AuthRepository>();
+builder.Services.AddScoped<AuthService.AuthService>();
 builder.Services.AddScoped<GymGoerService>();
 builder.Services.AddScoped<WorkoutService>();
 builder.Services.AddScoped<ExerciseService>();
@@ -47,9 +52,20 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-
-
+//https://stackoverflow.com/questions/42336950/firebase-authentication-jwt-with-net-core
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+    options.RequireHttpsMetadata = false;
+    options.Authority = "https://securetoken.google.com/gymworkdidsclosedoauth";
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidIssuer = "https://securetoken.google.com/gymworkdidsclosedoauth",
+        ValidateAudience = true,
+        ValidAudience = "gymworkdidsclosedoauth",
+        ValidateLifetime = true
+    };
+});
 var app = builder.Build();
 
 app.UseCors(corsPolicyBuilder =>

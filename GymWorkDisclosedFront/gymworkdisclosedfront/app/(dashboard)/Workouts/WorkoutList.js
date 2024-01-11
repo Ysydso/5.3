@@ -1,7 +1,6 @@
 import { getGymGoer } from '../../components/services/gymGoerService'
-import {getExerciseByGymGoerId} from "@/app/components/services/exerciseService";
 export default async function GymGoer(filtertype, filtervalue) {
-    const User = "d8ce900c-3c6e-444e-8f2e-7726773d08fc"
+    const User = "875b0352-2ca1-4c7a-811e-433470cd7e56"
     const gymgoer = await getGymGoer(User, filtertype, filtervalue)
     console.log(gymgoer)
     return (

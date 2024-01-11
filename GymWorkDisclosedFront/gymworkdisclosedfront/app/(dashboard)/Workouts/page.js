@@ -1,6 +1,6 @@
 import React from 'react'
-import GymGoer from './WorkoutList'
-import WorkoutFilters from "@/app/components/filters/Workoutfilters";
+import GymGoer from '../../(dashboard)/Workouts/WorkoutList'
+import WorkoutFilters from "../../components/filters/Workoutfilters";
 
 
 export default function Workouts() {
@@ -14,7 +14,8 @@ export default function Workouts() {
         </div>
       </nav>
       <WorkoutFilters gymgoer={"82e1b165-7baf-49c2-868f-7e45b2750d19"}/>
-        <GymGoer filtertype={"bodypart"} filtervalue={"Front"}/>
+        <GymGoer filtertype={"bodypart"} filtervalue={"Arm"}/>
+        
        
     </main>
   )

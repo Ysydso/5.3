@@ -1,4 +1,4 @@
-﻿import PersonalBestList from "@/app/components/pagedata/PersonalBestList";
+﻿import PersonalBestList from "../../../components/pagedata/PersonalBestList";
 
 export default async function PersonalBests(){
     return (

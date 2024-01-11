@@ -1,6 +1,6 @@
 ﻿'use client';
-import {useEffect, useState} from 'react';import {getExerciseByGymGoerId, getExercises} from "@/app/components/services/exerciseService";
-import GymGoer from "@/app/(dashboard)/Workouts/WorkoutList";
+import {useEffect, useState} from 'react';import {getExerciseByGymGoerId, getExercises} from "../../components/services/exerciseService";
+import GymGoer from "../../(dashboard)/Workouts/WorkoutList";
 import React from "react";
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
@@ -30,9 +30,6 @@ export default function WorkoutFilters(Gymgoer){
     useEffect(() => {
         const fetchExercises = async () => {
             const response = await getExerciseByGymGoerId(Gymgoer);
-            if(!response.ok){
-                throw new Error(`Error: ${response.status} - ${response.statusText}`);
-            }
             setExercises(response);
             
         };

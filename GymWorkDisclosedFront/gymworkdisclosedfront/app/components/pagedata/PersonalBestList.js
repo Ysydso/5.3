@@ -1,4 +1,4 @@
-﻿import {getPersonalBests} from "@/app/components/services/workoutService";
+﻿import {getPersonalBests} from "../services/workoutService";
 
 export default async function PersonalBestList() {
     const User = "d8ce900c-3c6e-444e-8f2e-7726773d08fc"

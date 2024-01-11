@@ -22,6 +22,7 @@
 
 
     <ItemGroup>
+      <ProjectReference Include="..\AuthService\AuthService.csproj" />
       <ProjectReference Include="..\ExerciseService\ExerciseService.csproj" />
       <ProjectReference Include="..\GymGoerService\GymGoerService.csproj" />
       <ProjectReference Include="..\WorkoutService\WorkoutService.csproj" />

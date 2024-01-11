@@ -5,15 +5,13 @@ public class GymGoer
     public Guid Id { get; }
     public string Name { get; private set; }
     public string Email { get; private set; }
-    public string Password { get; private set; }
     public List<Workout> Workouts { get; private set; }
     
-    public GymGoer(Guid id, string name, string email, string password)
+    public GymGoer(string name, string email)
     {
-        Id = id;
+        Id = Guid.NewGuid();
         Name = name;
         Email = email;
-        Password = password;
         Workouts = new List<Workout>();
     }
     public GymGoer(Guid id, string name, string email)

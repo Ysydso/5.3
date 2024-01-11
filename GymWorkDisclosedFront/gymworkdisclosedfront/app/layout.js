@@ -1,24 +1,29 @@
-import { Inter } from 'next/font/google'
-import './globals.css'
+"use client";
+import { Inter } from 'next/font/google';
+import './globals.css';
 
 // components
 
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar';
+import { useState } from 'react';
+import { AuthContextProps } from './components/firebase/firebase';
+import {Providers} from "./components/providers/providers";
 
-
-const inter = Inter({ subsets: ['latin'] })
-
-export const metadata = {
-  title: 'GymWorkDisclosed',
-  description: 'Created to track workouts',
-}
 
 export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Navbar />
-        {children}</body>
-    </html>
-  )
+    const [authContext, setAuthContext] = useState({
+        logout: () => {},
+        token: null,
+    });
+
+    return (
+        <html lang="en" className="dark">
+        <body>
+        <Providers authContext={authContext}>
+            <Navbar setAuthContext={setAuthContext} />
+            {children}
+        </Providers>
+        </body>
+        </html>
+    );
 }
