@@ -1,6 +1,7 @@
 using BusinessLogic.Classes;
 using BusinessLogic.Services.GymGoer;
 using GymWorkDisclosed.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GymWorkDisclosed.Controllers

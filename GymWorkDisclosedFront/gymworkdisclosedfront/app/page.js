@@ -1,6 +1,6 @@
 import Link from "next/link";
-import GymGoer from "@/app/(dashboard)/Workouts/WorkoutList";
-import {getExerciseByGymGoerId, getExercises} from "@/app/components/services/exerciseService";
+import GoogleLoginUser from "./components/auth/Login";
+import Logout from "./components/auth/Logout";
 
 export default function Home() {
   return (
@@ -12,6 +12,8 @@ export default function Home() {
         <Link href="/Workouts">
           <button className="btn-primary">View Workouts</button>
         </Link>
+          <button className="btn-primary" onClick={GoogleLoginUser}>Login</button>
+          <button className="btn-primary" onClick={Logout}>Logout</button>
       </div>
 
       <h2>Company Updates</h2>

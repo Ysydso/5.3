@@ -9,17 +9,20 @@ public class GymGoerEntity
     public Guid Id { get; set; } = Guid.NewGuid();
     public string Name { get; set; }
     public string Email { get; set; }
-    public string Password { get; set; }
-    public List<WorkoutEntity> Workouts { get; set; }
+    public List<WorkoutEntity> Workouts { get; set; } = new List<WorkoutEntity>();
     
     public GymGoer ToGymGoer()
     {
         
-        GymGoer gymGoer = new GymGoer(Id, Name, Email, Password);
-        foreach (WorkoutEntity workoutEntity in Workouts)
+        GymGoer gymGoer = new GymGoer(Id, Name, Email);
+        if (Workouts.Count is not 0)
         {
-            gymGoer.AddWorkout(workoutEntity.ToWorkout(workoutEntity.ExerciseEntity.MuscleGroupExerciseEntities.Select(mge => mge.MuscleGroupEntity).ToList()));
+            foreach (WorkoutEntity workoutEntity in Workouts)
+            {
+                gymGoer.AddWorkout(workoutEntity.ToWorkout(workoutEntity.ExerciseEntity.MuscleGroupExerciseEntities.Select(mge => mge.MuscleGroupEntity).ToList()));
+            }
         }
+        
         return gymGoer;
     }
 }

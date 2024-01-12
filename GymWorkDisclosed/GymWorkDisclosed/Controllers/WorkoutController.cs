@@ -2,12 +2,14 @@
 using BusinessLogic.Services.Workout;
 using Microsoft.AspNetCore.Mvc;
 using GymWorkDisclosed.DTOs;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace GymWorkDisclosed.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class WorkoutController : ControllerBase
     {
         private readonly WorkoutService _workoutService;
@@ -19,6 +21,7 @@ namespace GymWorkDisclosed.Controllers
 
         // GET: api/Workout/5
         [HttpGet("{id:guid}", Name = "GetPersonalBestWorkoutsByGymGoerId")]
+        // [Authorize]
         public IActionResult PersonalBestWorkoutsByGymGoerIdPerExercise(Guid id)
         {
             List<Exercise> exercises = _workoutService.GetPersonalBestWorkoutsPerExerciseByGymGoerId(id);

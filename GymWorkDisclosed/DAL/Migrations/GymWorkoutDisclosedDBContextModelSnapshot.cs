@@ -19,7 +19,7 @@ namespace DAL.Migrations
                 .HasAnnotation("ProductVersion", "7.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("BusinessLogic.Entities.BodyPartEntity", b =>
+            modelBuilder.Entity("DAL.DBO.BodyPartEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -34,7 +34,7 @@ namespace DAL.Migrations
                     b.ToTable("bodyParts");
                 });
 
-            modelBuilder.Entity("BusinessLogic.Entities.ExerciseEntity", b =>
+            modelBuilder.Entity("DAL.DBO.ExerciseEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -49,7 +49,7 @@ namespace DAL.Migrations
                     b.ToTable("exercises");
                 });
 
-            modelBuilder.Entity("BusinessLogic.Entities.GymGoerEntity", b =>
+            modelBuilder.Entity("DAL.DBO.GymGoerEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -63,16 +63,12 @@ namespace DAL.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.HasKey("Id");
 
                     b.ToTable("gymGoer");
                 });
 
-            modelBuilder.Entity("BusinessLogic.Entities.MuscleGroupEntity", b =>
+            modelBuilder.Entity("DAL.DBO.MuscleGroupEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -92,7 +88,7 @@ namespace DAL.Migrations
                     b.ToTable("muscleGroups");
                 });
 
-            modelBuilder.Entity("BusinessLogic.Entities.MuscleGroupExerciseEntity", b =>
+            modelBuilder.Entity("DAL.DBO.MuscleGroupExerciseEntity", b =>
                 {
                     b.Property<Guid>("MuscleGroupId")
                         .HasColumnType("char(36)");
@@ -107,7 +103,7 @@ namespace DAL.Migrations
                     b.ToTable("MuscleGroupExerciseEntity");
                 });
 
-            modelBuilder.Entity("BusinessLogic.Entities.SetEntity", b =>
+            modelBuilder.Entity("DAL.DBO.SetEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -132,7 +128,7 @@ namespace DAL.Migrations
                     b.ToTable("sets");
                 });
 
-            modelBuilder.Entity("BusinessLogic.Entities.WorkoutEntity", b =>
+            modelBuilder.Entity("DAL.DBO.WorkoutEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -159,9 +155,9 @@ namespace DAL.Migrations
                     b.ToTable("workouts");
                 });
 
-            modelBuilder.Entity("BusinessLogic.Entities.MuscleGroupEntity", b =>
+            modelBuilder.Entity("DAL.DBO.MuscleGroupEntity", b =>
                 {
-                    b.HasOne("BusinessLogic.Entities.BodyPartEntity", "BodyPartEntity")
+                    b.HasOne("DAL.DBO.BodyPartEntity", "BodyPartEntity")
                         .WithMany("MuscleGroups")
                         .HasForeignKey("BodyPartId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -170,15 +166,15 @@ namespace DAL.Migrations
                     b.Navigation("BodyPartEntity");
                 });
 
-            modelBuilder.Entity("BusinessLogic.Entities.MuscleGroupExerciseEntity", b =>
+            modelBuilder.Entity("DAL.DBO.MuscleGroupExerciseEntity", b =>
                 {
-                    b.HasOne("BusinessLogic.Entities.ExerciseEntity", "ExerciseEntity")
+                    b.HasOne("DAL.DBO.ExerciseEntity", "ExerciseEntity")
                         .WithMany("MuscleGroupExerciseEntities")
                         .HasForeignKey("ExerciseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BusinessLogic.Entities.MuscleGroupEntity", "MuscleGroupEntity")
+                    b.HasOne("DAL.DBO.MuscleGroupEntity", "MuscleGroupEntity")
                         .WithMany("MuscleGroupExerciseEntities")
                         .HasForeignKey("MuscleGroupId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -189,9 +185,9 @@ namespace DAL.Migrations
                     b.Navigation("MuscleGroupEntity");
                 });
 
-            modelBuilder.Entity("BusinessLogic.Entities.SetEntity", b =>
+            modelBuilder.Entity("DAL.DBO.SetEntity", b =>
                 {
-                    b.HasOne("BusinessLogic.Entities.WorkoutEntity", "WorkoutEntity")
+                    b.HasOne("DAL.DBO.WorkoutEntity", "WorkoutEntity")
                         .WithMany("Sets")
                         .HasForeignKey("WorkoutId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -200,15 +196,15 @@ namespace DAL.Migrations
                     b.Navigation("WorkoutEntity");
                 });
 
-            modelBuilder.Entity("BusinessLogic.Entities.WorkoutEntity", b =>
+            modelBuilder.Entity("DAL.DBO.WorkoutEntity", b =>
                 {
-                    b.HasOne("BusinessLogic.Entities.ExerciseEntity", "ExerciseEntity")
+                    b.HasOne("DAL.DBO.ExerciseEntity", "ExerciseEntity")
                         .WithMany("Workouts")
                         .HasForeignKey("ExerciseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BusinessLogic.Entities.GymGoerEntity", "GymGoerEntity")
+                    b.HasOne("DAL.DBO.GymGoerEntity", "GymGoerEntity")
                         .WithMany("Workouts")
                         .HasForeignKey("GymGoerId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -219,29 +215,29 @@ namespace DAL.Migrations
                     b.Navigation("GymGoerEntity");
                 });
 
-            modelBuilder.Entity("BusinessLogic.Entities.BodyPartEntity", b =>
+            modelBuilder.Entity("DAL.DBO.BodyPartEntity", b =>
                 {
                     b.Navigation("MuscleGroups");
                 });
 
-            modelBuilder.Entity("BusinessLogic.Entities.ExerciseEntity", b =>
+            modelBuilder.Entity("DAL.DBO.ExerciseEntity", b =>
                 {
                     b.Navigation("MuscleGroupExerciseEntities");
 
                     b.Navigation("Workouts");
                 });
 
-            modelBuilder.Entity("BusinessLogic.Entities.GymGoerEntity", b =>
+            modelBuilder.Entity("DAL.DBO.GymGoerEntity", b =>
                 {
                     b.Navigation("Workouts");
                 });
 
-            modelBuilder.Entity("BusinessLogic.Entities.MuscleGroupEntity", b =>
+            modelBuilder.Entity("DAL.DBO.MuscleGroupEntity", b =>
                 {
                     b.Navigation("MuscleGroupExerciseEntities");
                 });
 
-            modelBuilder.Entity("BusinessLogic.Entities.WorkoutEntity", b =>
+            modelBuilder.Entity("DAL.DBO.WorkoutEntity", b =>
                 {
                     b.Navigation("Sets");
                 });
