@@ -97,11 +97,12 @@ jobs:
         working-directory: GymWorkDisclosed
 
       - name: Setup MySQL
-        uses: mirromutth/mysql-action@v1.1
+        uses: getong/setup-mysql@v1.1
         with:
+          mysql version: '8.0'
           mysql database: 'GymWorkTestDB'
           mysql root password: 'rootpassword'
-          mysql version: '8.0'
+          
         
       - name: Integration Test Projects
         run: dotnet test --logger "trx;LogFileName=testresult-integration.trx"
