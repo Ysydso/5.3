@@ -97,7 +97,7 @@ jobs:
         working-directory: GymWorkDisclosed
 
       - name: Setup MySQL
-        uses: getong/setup-mysql@v1.1
+        uses: mirromutth/mysql-action@v1.1
         with:
           mysql version: '8.0'
           mysql database: 'GymWorkTestDB'
