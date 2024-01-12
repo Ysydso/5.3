@@ -101,6 +101,7 @@ jobs:
         with:
           mysql database: 'GymWorkTestDB'
           mysql root password: 'rootpassword'
+          mysql version: '8.0'
         
       - name: Integration Test Projects
         run: dotnet test --logger "trx;LogFileName=testresult-integration.trx"
