@@ -9,6 +9,7 @@ namespace GymWorkDisclosed.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class WorkoutController : ControllerBase
     {
         private readonly WorkoutService _workoutService;

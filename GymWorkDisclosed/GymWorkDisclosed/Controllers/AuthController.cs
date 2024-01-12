@@ -24,6 +24,7 @@ namespace GymWorkDisclosed.Controllers
         
         // GET: api/Auth/5
         [HttpGet("{email}",Name = "Login")]
+        [Authorize]
         public GymGoerDTO Get(string email)
         {
             GymGoer gymGoer = _authService.GetGymGoerByEmail(email);

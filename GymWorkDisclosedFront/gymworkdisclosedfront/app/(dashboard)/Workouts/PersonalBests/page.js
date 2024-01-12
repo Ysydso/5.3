@@ -4,12 +4,12 @@ import {auth} from "../../../components/firebase/firebase.Config";
 import {getUser} from "../../../components/services/userService";
 
 
-export default function PersonalBests(){
+export default async function PersonalBests(){
     const email = auth.currentUser.email;
-    const token = auth.currentUser.getIdToken();
-    const user = getUser(email, token)
+    const token = await auth.currentUser.getIdToken();
+    const user = await getUser(email, token)
 
-    const data = {userObj, token};
+    const data = {user, token};
     console.log("user after retrieval", user);
 
     return (
