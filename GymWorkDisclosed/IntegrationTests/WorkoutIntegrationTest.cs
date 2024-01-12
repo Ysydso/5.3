@@ -1,3 +1,4 @@
+using System.Net.Http.Headers;
 using DAL;
 using IntegrationTests.JsonSerialiseObjects.Exercise;
 using IntegrationTests.JsonSerialiseObjects.GymGoer;
@@ -61,9 +62,13 @@ public class WorkoutIntegrationTest
     public async Task ShouldRetrievePersonalBestWorkoutsFromApi()
     {
         //arrange
+        string token = await FireBaseAuthenticationUserBuilder.Auth();
+        
+        var header = new AuthenticationHeaderValue("Bearer", token);
         _context.Database.EnsureCreated();
         DatabaseSeeder.Initialise(_context);
         DatabaseSeeder.Seed();
+        _client.DefaultRequestHeaders.Authorization = header;
         
         //act
         var response = await _client.GetAsync("/api/Workout/b25b8dc7-9bf0-4c10-88f9-a4606314d2e5");
