@@ -102,11 +102,6 @@ jobs:
           mysql version: '8.0'
           mysql database: 'GymWorkTestDB'
           mysql root password: 'rootpassword'
-      
-      - name: Wait for MySQL service
-        uses: jakejarvis/wait-action@master
-        with:
-          time: '30s'
         
         
       - name: Integration Test Projects
@@ -178,11 +173,6 @@ jobs:
         with:
           mysql database: 'GymWorkTestDB'
           mysql root password: 'rootpassword'
-      - name: Wait for MySQL service
-        uses: jakejarvis/wait-action@master
-        with:
-          time: '30s'
-
 
 
       - name: Build Projects
