@@ -10,7 +10,7 @@ public class GymWorkoutDisclosedDBContext: DbContext
     }
     public DbSet<BodyPartEntity> bodyParts { get; set; }
     public DbSet<ExerciseEntity> exercises { get; set; }
-    public DbSet<GymGoerEntity> gymGoers { get; set; }
+    public DbSet<GymGoerEntity> gymGoer { get; set; }
     public DbSet<MuscleGroupEntity> muscleGroups { get; set; }
     public DbSet<SetEntity> sets { get; set; }
     public DbSet<WorkoutEntity> workouts { get; set; }

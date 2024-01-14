@@ -18,7 +18,7 @@ public class GymGoerRepository : IGymGoerRepository
     public GymGoer GetGymGoerById(Guid id)
     {
         GymGoerEntity gymGoerEntity 
-            = _context.gymGoers
+            = _context.gymGoer
                 .Include(g => g.Workouts)
                 .ThenInclude(w => w.Sets)
                 .Include(g => g.Workouts)

@@ -15,7 +15,7 @@ public class AuthRepository : IAuthRepository
 
     public GymGoer CreateGymGoerIfDoesntExist(GymGoer gymGoer)
     {
-        GymGoerEntity gymGoerEntity = _context.gymGoers.FirstOrDefault(gg => gg.Email == gymGoer.Email);
+        GymGoerEntity gymGoerEntity = _context.gymGoer.FirstOrDefault(gg => gg.Email == gymGoer.Email);
         if (gymGoerEntity == null)
         {
             gymGoerEntity = new GymGoerEntity
@@ -23,7 +23,7 @@ public class AuthRepository : IAuthRepository
                 Name = gymGoer.Name,
                 Email = gymGoer.Email
             };
-            _context.gymGoers.Add(gymGoerEntity);
+            _context.gymGoer.Add(gymGoerEntity);
             _context.SaveChanges();
         }
         return gymGoerEntity.ToGymGoer();
@@ -31,7 +31,7 @@ public class AuthRepository : IAuthRepository
 
     public GymGoer GetGymGoerByEmail(string email)
     {
-        GymGoerEntity gymGoerEntity = _context.gymGoers.FirstOrDefault(gg => gg.Email == email);
+        GymGoerEntity gymGoerEntity = _context.gymGoer.FirstOrDefault(gg => gg.Email == email);
         return gymGoerEntity?.ToGymGoer();
     }
 }

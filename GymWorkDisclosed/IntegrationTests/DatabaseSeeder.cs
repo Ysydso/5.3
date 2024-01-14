@@ -41,7 +41,7 @@ internal static class DatabaseSeeder
             Name = "Test",
             Email = "Test",
         };
-        _context.gymGoers.Add(gymGoerEntity);
+        _context.gymGoer.Add(gymGoerEntity);
         _context.SaveChanges();
         return gymGoerEntity;
     }
