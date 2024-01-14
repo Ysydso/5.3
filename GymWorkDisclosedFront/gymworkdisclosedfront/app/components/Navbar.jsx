@@ -3,7 +3,7 @@ import React, {useEffect} from 'react'
 import Link from 'next/link'
 import Login from "../components/auth/Login";
 import Logout from "../components/auth/Logout";
-import {auth} from "../components/firebase/firebase.config";
+import {auth} from "./firebase/firebase.config";
 
 const LoggedInUser = () => {
     useEffect(() => {
