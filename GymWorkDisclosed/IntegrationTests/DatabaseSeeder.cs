@@ -21,6 +21,17 @@ internal static class DatabaseSeeder
         
     }
 
+    internal static BodyPartEntity AddBodyPartEntity()
+    {
+        var bodyPartEntity = new BodyPartEntity
+        {
+            Id = Guid.NewGuid(),
+            Name = "Arm"
+        };
+        _context.bodyParts.Add(bodyPartEntity);
+        _context.SaveChanges();
+        return bodyPartEntity;
+    }
     internal static GymGoerEntity AddGymGoerEntity()
     {
         var gymGoerEntity = new GymGoerEntity
@@ -32,18 +43,6 @@ internal static class DatabaseSeeder
         _context.gymGoers.Add(gymGoerEntity);
         _context.SaveChanges();
         return gymGoerEntity;
-    }
-
-    internal static BodyPartEntity AddBodyPartEntity()
-    {
-        var bodyPartEntity = new BodyPartEntity
-        {
-            Id = Guid.NewGuid(),
-            Name = "Arm"
-        };
-        _context.bodyParts.Add(bodyPartEntity);
-        _context.SaveChanges();
-        return bodyPartEntity;
     }
 
     internal static List<MuscleGroupEntity> AddMuscleGroupEntities(BodyPartEntity bodyPartEntity)
