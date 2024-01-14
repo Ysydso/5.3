@@ -13,9 +13,10 @@ internal static class DatabaseSeeder
     }
     internal static void Seed()
     {
-        GymGoerEntity gymGoerEntity = AddGymGoerEntity();
+        
         BodyPartEntity bodyPartEntity = AddBodyPartEntity();
         List<MuscleGroupEntity> muscleGroupEntities = AddMuscleGroupEntities(bodyPartEntity);
+        GymGoerEntity gymGoerEntity = AddGymGoerEntity();
         List<ExerciseEntity> exerciseEntities = AddExerciseEntities(muscleGroupEntities);
         List<WorkoutEntity> workoutEntities = AddWorkoutEntities(gymGoerEntity, exerciseEntities);
         
