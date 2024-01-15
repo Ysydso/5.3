@@ -67,5 +67,34 @@ namespace GymWorkDisclosed.Controllers
 
             return Ok(personalBestWorkoutsDTO);
         }
+        
+        // POST: api/Workout
+        [HttpPost]
+        [AllowAnonymous]
+        public IActionResult Post([FromBody] AddWorkoutDTO workoutDTO)
+        {
+            try
+            {
+                Workout workout = new Workout(DateOnly.FromDateTime(DateTime.Now), workoutDTO.TimeInSeconds, new GymGoer(workoutDTO.GymGoerId), new Exercise(workoutDTO.Exercise.Name));
+                foreach (SetDTO setDto in workoutDTO.Sets)
+                {
+                    workout.Sets.Add(new Set(setDto.Guid, setDto.Reps, setDto.Weight, setDto.TimeInSeconds));
+                }
+                Workout returnWorkout = _workoutService.AddWorkout(workout, workoutDTO.GymGoerId);
+                WorkoutDTO returnWorkoutDTO = new WorkoutDTO(returnWorkout.Id, returnWorkout.Time, returnWorkout.Date);
+                foreach (Set set in returnWorkout.Sets)
+                {
+                    SetDTO setDTO = new SetDTO(set.Id, set.Reps, set.Weight, set.Time);
+                    returnWorkoutDTO.Sets.Add(setDTO);
+                }
+                returnWorkoutDTO.Exercise = new ExerciseDTO(returnWorkout.Exercise.Id, returnWorkout.Exercise.Name);
+                return Ok(returnWorkoutDTO);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
     }
 }

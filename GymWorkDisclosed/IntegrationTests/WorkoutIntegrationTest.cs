@@ -1,5 +1,7 @@
 using System.Net.Http.Headers;
+using System.Text;
 using DAL;
+using GymWorkDisclosed.DTOs;
 using IntegrationTests.JsonSerialiseObjects.Exercise;
 using IntegrationTests.JsonSerialiseObjects.GymGoer;
 using IntegrationTests.JsonSerialiseObjects.Workouts;
@@ -113,5 +115,38 @@ public class WorkoutIntegrationTest
         
         // Assert
         Assert.AreEqual("b25b8dc7-9bf0-4c10-88f9-a4606314d2e5", guid);
+    }
+
+    [TestMethod]
+    public async Task ShouldPostNewWorkout()
+    {
+        //arrange
+        _context.Database.EnsureCreated();
+        DatabaseSeeder.Initialise(_context);
+        DatabaseSeeder.Seed();
+
+        List<SetDTO> setDtos = new List<SetDTO>()
+        {
+            new SetDTO( null, 10, 20, 30 ),
+            new SetDTO( null, 10, 20, 30 )
+        };
+        AddWorkoutDTO addWorkoutDTO = new AddWorkoutDTO(700, new Guid("b25b8dc7-9bf0-4c10-88f9-a4606314d2e5"), new ExerciseDTO(null, "AddWorkout Extension"), setDtos);
+        string json = JsonConvert.SerializeObject(addWorkoutDTO);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+        
+        //act
+        var response = await _client.PostAsync("/api/Workout", content);
+        var jsonString = await response.Content.ReadAsStringAsync();
+        
+        //assert
+        response.EnsureSuccessStatusCode();
+        
+        //act
+        WorkoutSerialiseObject workout = JsonConvert.DeserializeObject<WorkoutSerialiseObject>(jsonString);
+        
+        //assert
+        Assert.AreEqual(700, workout.TimeInSeconds);
+        Assert.AreEqual("AddWorkout Extension", workout.Exercise.Name);
+        Assert.AreEqual(2, workout.Sets.Count);
     }
 }

@@ -1,4 +1,4 @@
-﻿using AuthService;
+﻿using BusinessLogic.Services.AuthService;
 using BusinessLogic.Classes;
 using DAL.DBO;
 

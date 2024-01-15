@@ -1,6 +1,6 @@
 ﻿using BusinessLogic.Classes;
 
-namespace AuthService;
+namespace BusinessLogic.Services.AuthService;
 
 public interface IAuthRepository
 {

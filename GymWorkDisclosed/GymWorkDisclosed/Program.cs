@@ -1,4 +1,4 @@
-using AuthService;
+using BusinessLogic.Services.AuthService;
 using BusinessLogic.Services.ExerciseService;
 using BusinessLogic.Services.GymGoer;
 using BusinessLogic.Services.Workout;
@@ -7,6 +7,7 @@ using DAL;
 using DAL.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using PersonalTrainerService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +17,9 @@ builder.Services.AddTransient<IGymGoerRepository, GymGoerRepository>();
 builder.Services.AddTransient<IWorkoutRepository, WorkoutRepository>();
 builder.Services.AddTransient<IExerciseRepository, ExerciseRepository>();
 builder.Services.AddTransient<IAuthRepository, AuthRepository>();
-builder.Services.AddScoped<AuthService.AuthService>();
+builder.Services.AddTransient<ITrainerRepository, TrainerRepository>();
+builder.Services.AddScoped<TrainerService>();
+builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<GymGoerService>();
 builder.Services.AddScoped<WorkoutService>();
 builder.Services.AddScoped<ExerciseService>();

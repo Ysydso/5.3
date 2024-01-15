@@ -99,7 +99,19 @@ internal static class DatabaseSeeder
                         MuscleGroupEntity = muscleGroupEntities[1]
                     }
                 }
+            },
+            new ExerciseEntity{
+            Id = Guid.NewGuid(),
+            Name = "AddWorkout Extension",
+            MuscleGroupExerciseEntities = new List<MuscleGroupExerciseEntity>()
+            {
+                new MuscleGroupExerciseEntity
+                {
+                    MuscleGroupId = muscleGroupEntities[1].Id,
+                    MuscleGroupEntity = muscleGroupEntities[1]
+                }
             }
+        }
         };
         _context.exercises.AddRange(exerciseEntities);
         _context.SaveChanges();
