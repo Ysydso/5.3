@@ -7,10 +7,10 @@ public class PersonalTrainerEntity
 {
     [Key]
     public Guid Id { get; set; } = Guid.NewGuid();
-    public string Name { get; private set; }
-    public string Email { get; private set; }
-    
-    public List<GymGoerEntity> GymGoers { get; private set; }
+    public string Name { get; set; }
+    public string Email { get; set; }
+
+    public List<GymGoerEntity> GymGoers { get; set; } = new List<GymGoerEntity>();
     
     public PersonalTrainer ToPersonalTrainer()
     {

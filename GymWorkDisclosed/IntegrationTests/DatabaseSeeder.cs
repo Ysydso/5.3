@@ -13,13 +13,12 @@ internal static class DatabaseSeeder
     }
     internal static void Seed()
     {
-        
+        PersonalTrainerEntity personalTrainerEntity = AddPersonalTrainerEntity();
         BodyPartEntity bodyPartEntity = AddBodyPartEntity();
         List<MuscleGroupEntity> muscleGroupEntities = AddMuscleGroupEntities(bodyPartEntity);
-        GymGoerEntity gymGoerEntity = AddGymGoerEntity();
+        GymGoerEntity gymGoerEntity = AddGymGoerEntity(personalTrainerEntity);
         List<ExerciseEntity> exerciseEntities = AddExerciseEntities(muscleGroupEntities);
         List<WorkoutEntity> workoutEntities = AddWorkoutEntities(gymGoerEntity, exerciseEntities);
-        
     }
 
     internal static BodyPartEntity AddBodyPartEntity()
@@ -33,13 +32,14 @@ internal static class DatabaseSeeder
         _context.SaveChanges();
         return bodyPartEntity;
     }
-    internal static GymGoerEntity AddGymGoerEntity()
+    internal static GymGoerEntity AddGymGoerEntity(PersonalTrainerEntity personalTrainerEntity)
     {
         var gymGoerEntity = new GymGoerEntity
         {
             Id = new Guid("b25b8dc7-9bf0-4c10-88f9-a4606314d2e5"),
             Name = "Test",
             Email = "user@example.com",
+            PersonalTrainerEntityId = personalTrainerEntity.Id
         };
         _context.gymGoer.Add(gymGoerEntity);
         _context.SaveChanges();
@@ -207,5 +207,18 @@ internal static class DatabaseSeeder
         _context.workouts.AddRange(workoutEntities);
         _context.SaveChanges();
         return workoutEntities;
+    }
+
+    internal static PersonalTrainerEntity AddPersonalTrainerEntity()
+    {
+        PersonalTrainerEntity personalTrainerEntity = new PersonalTrainerEntity()
+        {
+            Id = new Guid("c9bf8bd0-fba3-4ee7-b414-925136964129"),
+            Name = "TrainerTest",
+            Email = "Trainer@test.com",
+        };
+        _context.personalTrainers.Add(personalTrainerEntity);
+        _context.SaveChanges();
+        return personalTrainerEntity;
     }
 }
