@@ -63,7 +63,6 @@ public class WorkoutIntegrationTest
     {
         //arrange
         string token = await FireBaseAuthenticationUserBuilder.Auth();
-        
         var header = new AuthenticationHeaderValue("Bearer", token);
         _context.Database.EnsureCreated();
         DatabaseSeeder.Initialise(_context);
@@ -88,6 +87,31 @@ public class WorkoutIntegrationTest
         Assert.AreEqual(30, tricepMaxWeight);
         Assert.AreEqual(300, bicepCurlLongestTime);
     }
+    
+    [TestMethod]
+    public async Task ShouldRetrieveGymGoerIdFromAuthApi()
+    {
+        //arrange
+        string token = await FireBaseAuthenticationUserBuilder.Auth();
+        var header = new AuthenticationHeaderValue("Bearer", token);
+        _context.Database.EnsureCreated();
+        DatabaseSeeder.Initialise(_context);
+        DatabaseSeeder.Seed();
+        _client.DefaultRequestHeaders.Authorization = header;
 
+        //act
+        var response = await _client.GetAsync("/api/Auth/user@example.com");
+        var jsonString = await response.Content.ReadAsStringAsync();
 
+        //assert
+        response.EnsureSuccessStatusCode();
+
+        //act
+
+        GymGoerSerialiseObject gymGoer = JsonConvert.DeserializeObject<GymGoerSerialiseObject>(jsonString);
+        string guid = gymGoer.Guid.ToString();
+        
+        // Assert
+        Assert.AreEqual("b25b8dc7-9bf0-4c10-88f9-a4606314d2e5", guid);
+    }
 }

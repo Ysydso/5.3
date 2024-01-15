@@ -39,7 +39,7 @@ internal static class DatabaseSeeder
         {
             Id = new Guid("b25b8dc7-9bf0-4c10-88f9-a4606314d2e5"),
             Name = "Test",
-            Email = "Test",
+            Email = "user@example.com",
         };
         _context.gymGoer.Add(gymGoerEntity);
         _context.SaveChanges();

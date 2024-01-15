@@ -12,23 +12,6 @@ public class AuthRepository : IAuthRepository
     {
         _context = context;
     }
-
-    public GymGoer CreateGymGoerIfDoesntExist(GymGoer gymGoer)
-    {
-        GymGoerEntity gymGoerEntity = _context.gymGoer.FirstOrDefault(gg => gg.Email == gymGoer.Email);
-        if (gymGoerEntity == null)
-        {
-            gymGoerEntity = new GymGoerEntity
-            {
-                Name = gymGoer.Name,
-                Email = gymGoer.Email
-            };
-            _context.gymGoer.Add(gymGoerEntity);
-            _context.SaveChanges();
-        }
-        return gymGoerEntity.ToGymGoer();
-    }
-
     public GymGoer GetGymGoerByEmail(string email)
     {
         GymGoerEntity gymGoerEntity = _context.gymGoer.FirstOrDefault(gg => gg.Email == email);
