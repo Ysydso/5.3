@@ -1,6 +1,6 @@
 ﻿namespace GymWorkDisclosed.DTOs;
 
-public class MuscleGroupDTO
+public class MuscleGroupDto
 {
     public Guid Guid { get; set; }
     public string Name { get; set; }

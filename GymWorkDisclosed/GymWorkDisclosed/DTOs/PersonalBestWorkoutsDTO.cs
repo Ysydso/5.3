@@ -1,6 +1,6 @@
 ﻿namespace GymWorkDisclosed.DTOs;
 
-public class PersonalBestWorkoutsDTO
+public class PersonalBestWorkoutsDto
 {
     public List<PersonalBestExerciseDTO> Exercises { get; set; }
     

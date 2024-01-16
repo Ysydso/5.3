@@ -1,6 +1,5 @@
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { getUser } from "../../app/components/services/userService"
-import { getPersonalBests } from "../../app/components/services/workoutService";
 
 Cypress.Commands.add('signInWithEmailAndPassword', (auth, email, password) => {
     return cy.wrap(signInWithEmailAndPassword(auth, email, password));

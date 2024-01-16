@@ -14,7 +14,7 @@ namespace GymWorkDisclosed.Controllers
     [ApiController]
     public class PersonalTrainerController : ControllerBase
     {
-        private TrainerService _trainerService;
+        private readonly TrainerService _trainerService;
         public PersonalTrainerController(TrainerService trainerService)
         {
             _trainerService = trainerService;

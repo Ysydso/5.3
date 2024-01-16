@@ -93,7 +93,10 @@ app.Run();
 
 namespace GymWorkDisclosed
 {
-    public class GymWorkDisclosedProgram
+    public interface IGymWorkDisclosedProgram
+    {
+        // Define interface methods and properties here
+    }
     {
     }
 }

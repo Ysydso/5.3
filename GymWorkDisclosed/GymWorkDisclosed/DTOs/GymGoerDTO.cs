@@ -1,6 +1,6 @@
 ﻿namespace GymWorkDisclosed.DTOs;
 
-public class GymGoerDTO
+public class GymGoerDto
 {
     public Guid? Guid { get; set; }
     public string Name { get; set; }

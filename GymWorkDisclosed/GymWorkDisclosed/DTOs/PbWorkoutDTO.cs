@@ -1,6 +1,6 @@
 ﻿namespace GymWorkDisclosed.DTOs;
 
-public class PbWorkoutDTO
+public class PbWorkoutDto
 {
     public Guid Guid { get; set; }
     public int TimeInSeconds { get; set; }

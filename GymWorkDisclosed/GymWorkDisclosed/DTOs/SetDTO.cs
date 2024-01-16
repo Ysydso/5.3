@@ -1,6 +1,6 @@
 ﻿namespace GymWorkDisclosed.DTOs;
 
-public class SetDTO
+public class SetDto
 {
     public Guid? Guid { get; set; }
     public int Reps { get; set; }

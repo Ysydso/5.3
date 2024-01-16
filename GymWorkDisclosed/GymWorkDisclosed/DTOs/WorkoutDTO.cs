@@ -2,7 +2,7 @@
 
 namespace GymWorkDisclosed.DTOs;
 
-public class WorkoutDTO
+public class WorkoutDto
 {
     public Guid? Guid { get; set; }
     public int TimeInSeconds { get; set; }

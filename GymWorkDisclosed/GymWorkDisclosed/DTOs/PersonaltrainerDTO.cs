@@ -2,7 +2,7 @@ using BusinessLogic.Classes;
 
 namespace GymWorkDisclosed.DTOs;
 
-public class PersonaltrainerDTO
+public class PersonaltrainerDto
 {
     public Guid Id { get; set; }
     public string Name { get; set; }

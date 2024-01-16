@@ -4,7 +4,7 @@ namespace BusinessLogic.Services.Workout;
 
 public class WorkoutService
 {
-    private List<Exercise> _personalBestWorkoutsPerExercise;
+    private readonly List<Exercise> _personalBestWorkoutsPerExercise;
     private Classes.Workout _currentBestTimeWorkout;
     private Classes.Workout _currentBestWeightWorkout;
     private Classes.Workout _currentBestRepsWorkout;

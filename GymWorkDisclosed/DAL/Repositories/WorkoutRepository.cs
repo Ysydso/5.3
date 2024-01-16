@@ -6,7 +6,13 @@ namespace DAL.Repositories;
 
 public class WorkoutRepository: IWorkoutRepository
 {
-    public GymWorkoutDisclosedDBContext _context;
+    private GymWorkoutDisclosedDBContext _context;
+
+    public GymWorkoutDisclosedDBContext Context
+    {
+        get { return _context; }
+        set { _context = value; }
+    }
     
     public WorkoutRepository(GymWorkoutDisclosedDBContext context)
     {

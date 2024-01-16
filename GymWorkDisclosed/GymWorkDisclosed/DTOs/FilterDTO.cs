@@ -1,6 +1,6 @@
 ﻿namespace GymWorkDisclosed.DTOs;
 
-public class FilterDTO
+public class FilterDto
 {
     public string FilterProperty { get; set; }
     public string FilterValue { get; set; }
