@@ -8,7 +8,7 @@ public class WorkoutRepository: IWorkoutRepository
 {
     private GymWorkoutDisclosedDBContext _context;
 
-    public GymWorkoutDisclosedDBContext Context
+    public GymWorkoutDisclosedDBContext Context { get; set; }
     {
         get { return _context; }
         set { _context = value; }
