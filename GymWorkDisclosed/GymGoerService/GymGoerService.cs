@@ -14,7 +14,14 @@ public class GymGoerService
     {
         Classes.GymGoer gymGoer = _gymGoerRepository.GetGymGoerById(id);
         Classes.GymGoer filteredGymGoer = new Classes.GymGoer(gymGoer.Id, gymGoer.Name, gymGoer.Email);
-        
+
+        ApplyFilter(gymGoer, filteredGymGoer, filterproperty, filtervalue);
+
+        return filteredGymGoer;
+    }
+
+    private void ApplyFilter(Classes.GymGoer gymGoer, Classes.GymGoer filteredGymGoer, string filterproperty, string filtervalue)
+    {
         switch (filterproperty)
         {
             case "all":
@@ -32,8 +39,53 @@ public class GymGoerService
             default:
                 break;
         }
-        
-        return filteredGymGoer;
+    }
+
+    private void FilterByAll(Classes.GymGoer gymGoer, Classes.GymGoer filteredGymGoer)
+    {
+        foreach (Workout workout in gymGoer.Workouts)
+        {
+            filteredGymGoer.AddWorkout(workout);
+        }
+    }
+
+    private void FilterByExercise(Classes.GymGoer gymGoer, Classes.GymGoer filteredGymGoer, string filtervalue)
+    {
+        foreach (Workout workout in gymGoer.Workouts)
+        {
+            if (workout.Exercise.Name == filtervalue)
+            {
+                filteredGymGoer.AddWorkout(workout);
+            }
+        }
+    }
+
+    private void FilterByMuscleGroup(Classes.GymGoer gymGoer, Classes.GymGoer filteredGymGoer, string filtervalue)
+    {
+        foreach (Workout workout in gymGoer.Workouts)
+        {
+            foreach (MuscleGroup muscleGroup in workout.Exercise.MuscleGroups)
+            {
+                if (muscleGroup.Name == filtervalue)
+                {
+                    filteredGymGoer.AddWorkout(workout);
+                }
+            }
+        }
+    }
+
+    private void FilterByBodyPart(Classes.GymGoer gymGoer, Classes.GymGoer filteredGymGoer, string filtervalue)
+    {
+        foreach (Workout workout in gymGoer.Workouts)
+        {
+            foreach (MuscleGroup muscleGroup in workout.Exercise.MuscleGroups)
+            {
+                if (muscleGroup.BodyPart.Name == filtervalue)
+                {
+                    filteredGymGoer.AddWorkout(workout);
+                }
+            }
+        }
     }
     
     private void FilterByAll(Classes.GymGoer gymGoer, Classes.GymGoer filteredGymGoer)

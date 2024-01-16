@@ -6,7 +6,7 @@ namespace DAL.Repositories;
 
 public class WorkoutRepository: IWorkoutRepository
 {
-    private GymWorkoutDisclosedDBContext _context;
+    // Remove the unused private field '_context'.
 
     public GymWorkoutDisclosedDBContext Context { get; set; }
     {
